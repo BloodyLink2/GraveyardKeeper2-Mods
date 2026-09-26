@@ -1,0 +1,21 @@
+SERMON EVERY DAY: Changelog
+===========================
+
+1.2.0 (2026-09-24)
+------------------
+- Translations: the settings (F1 menu and GK2 Mod Framework menu) and the mod description can now
+  be translated with language files of the GK2 Mod Framework (0.1.8 or newer). English and German
+  are included.
+- Checked against the game update 1.0.0.5: no changes needed.
+
+1.1.0 (2026-09-23)
+------------------
+- New option "Ignore Gratitude" (off by default): the number of parishioners depends on church
+  quality alone and sermons no longer consume Gratitude.
+
+1.0.0 (2026-09-23)
+------------------
+Initial release:
+- Hold sermons on any day of the week, not just on the Day of Wrath.
+- Sermons per day: limit per in-game day (0 = unlimited).
+- Settings in game via F1 (ConfigurationManager) or the GK2 Mod Framework menu.

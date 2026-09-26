@@ -1,0 +1,14 @@
+{
+  "mod.description": "Predigten an jedem Tag und so oft du willst (einstellbar), auf Wunsch ohne Stadt-Dankbarkeit.",
+  "Enabled.name": "Mod aktiv",
+  "Enabled.description": "Schaltet die Mod ein oder aus (wirkt sofort).",
+  "AnyDay.name": "Predigten an jedem Tag",
+  "AnyDay.description": "Erlaubt Predigten an jedem Wochentag, nicht nur am Tag des Zorns.",
+  "AnyDay.hint": "Nicht nur am Tag des Zorns.",
+  "CeremoniesPerDay.name": "Predigten pro Tag",
+  "CeremoniesPerDay.description": "Wie viele Predigten pro Tag erlaubt sind (0 = unbegrenzt). Außer mit „Stadt-Dankbarkeit ignorieren“ kostet jede Predigt weiterhin so viel Dankbarkeit, wie Gemeindemitglieder kommen. Das bleibt die natürliche Grenze.",
+  "CeremoniesPerDay.hint": "0 = unbegrenzt. Kostet weiter Dankbarkeit, außer sie wird ignoriert.",
+  "IgnoreGratitude.name": "Stadt-Dankbarkeit ignorieren",
+  "IgnoreGratitude.description": "Predigten hängen nicht mehr von der Stadt-Dankbarkeit ab: Die Zahl der Gemeindemitglieder ergibt sich nur aus der Kirchenqualität und es wird keine Dankbarkeit verbraucht. Wirkt ab dem nächsten Öffnen des Gebetsfensters.",
+  "IgnoreGratitude.hint": "Gemeindemitglieder = Kirchenqualität, keine Dankbarkeit wird verbraucht."
+}

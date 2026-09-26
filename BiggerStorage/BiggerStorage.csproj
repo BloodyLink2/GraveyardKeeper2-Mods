@@ -1,0 +1,78 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>BiggerStorage</AssemblyName>
+    <RootNamespace>BiggerStorage</RootNamespace>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <Version>1.0.0</Version>
+    <!-- Mod-Id beim GK2 Mod Framework (Plugin.ModId) – Ordnername der Sprachdateien. -->
+    <FrameworkModId>biggerstorage</FrameworkModId>
+    <Authors>BloodyLink2</Authors>
+    <Company>BloodyLink2</Company>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <!-- Release ohne PDB: Endnutzer brauchen sie nicht, und die DLL enthält dann keinen lokalen Build-Pfad. -->
+    <DebugType Condition="'$(Configuration)' == 'Release'">none</DebugType>
+  </PropertyGroup>
+
+  <!-- Pfade zur Spielinstallation. Der eigene Pfad gehört in LocalPaths.props neben GK2Mods.sln (nicht im
+       Repository, Vorlage: LocalPaths.props.example); ohne sie gilt der übliche Steam-Pfad. Auch per Kommandozeile:
+       dotnet build -p:GameDir="C:\Spiele\Graveyard Keeper 2" -p:DeployToGame=false -->
+  <PropertyGroup>
+    <GameDir Condition="'$(GameDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Graveyard Keeper 2</GameDir>
+    <GameManagedDir>$(GameDir)\GraveyardKeeper2_Data\Managed</GameManagedDir>
+    <BepInExDir>$(GameDir)\BepInEx</BepInExDir>
+    <FrameworkDll Condition="'$(FrameworkDll)' == ''">$(BepInExDir)\plugins\GK2.Framework.dll</FrameworkDll>
+    <PluginDeployDir Condition="'$(PluginDeployDir)' == ''">$(BepInExDir)\plugins\$(AssemblyName)</PluginDeployDir>
+    <DeployToGame Condition="'$(DeployToGame)' == ''">true</DeployToGame>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx"><HintPath>$(BepInExDir)\core\BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(BepInExDir)\core\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(GameManagedDir)\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="LazyBearTechnology"><HintPath>$(GameManagedDir)\LazyBearTechnology.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(GameManagedDir)\UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GameManagedDir)\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="GK2.Framework"><HintPath>$(FrameworkDll)</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+
+  <!-- Nach jedem Build DLL (+ PDB für Zeilennummern in Stacktraces) in den Plugin-Ordner des Spiels kopieren.
+       Das laufende Spiel sperrt die Datei nicht, die neue Version wirkt aber erst nach einem Neustart des Spiels. -->
+  <Target Name="DeployToGame" AfterTargets="Build" Condition="'$(DeployToGame)' == 'true'">
+    <Error Condition="!Exists('$(BepInExDir)\plugins')"
+           Text="BepInEx-Plugin-Ordner nicht gefunden: $(BepInExDir)\plugins. GameDir prüfen oder mit -p:DeployToGame=false bauen." />
+    <ItemGroup>
+      <_DeployFiles Include="$(TargetPath)" />
+      <_DeployFiles Include="$(TargetDir)$(TargetName).pdb" Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_DeployFiles)" DestinationFolder="$(PluginDeployDir)" Retries="2" RetryDelayMilliseconds="500" />
+    <!-- Sprachdateien liest das GK2 Mod Framework (ab 0.1.8) aus seinem eigenen Ordner. -->
+    <ItemGroup>
+      <_LocalizationFiles Include="Localization\*.json" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_LocalizationFiles)" DestinationFolder="$(BepInExDir)\plugins\GK2.Framework\Localization\$(FrameworkModId)" Retries="2" RetryDelayMilliseconds="500" />
+    <Message Importance="high" Text="$(AssemblyName) -> $(PluginDeployDir)" />
+  </Target>
+
+  <!-- Release-Build packt das Nexus-Archiv nach ..\Releases. Im Archiv liegt nur der Ordner BepInEx (DLL + README im
+       Plugin-Ordner, Sprachdateien im Ordner des GK2 Mod Frameworks), so landet bei Vortex, das relativ zum
+       Spielordner installiert, nichts lose neben der Spiel-EXE.
+       dotnet build -c Release -->
+  <Target Name="PackageRelease" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
+    <PropertyGroup>
+      <_PackageStageDir>$(ProjectDir)$(IntermediateOutputPath)package\</_PackageStageDir>
+      <_PackageOutDir>$(MSBuildProjectDirectory)\..\Releases</_PackageOutDir>
+      <_PackageZip>$(_PackageOutDir)\$(AssemblyName)-$(Version).zip</_PackageZip>
+    </PropertyGroup>
+    <RemoveDir Directories="$(_PackageStageDir)" />
+    <Copy SourceFiles="$(TargetPath);README.txt" DestinationFolder="$(_PackageStageDir)BepInEx\plugins\$(AssemblyName)" />
+    <ItemGroup>
+      <_PackageLocalization Include="Localization\*.json" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_PackageLocalization)" DestinationFolder="$(_PackageStageDir)BepInEx\plugins\GK2.Framework\Localization\$(FrameworkModId)" />
+    <MakeDir Directories="$(_PackageOutDir)" />
+    <ZipDirectory SourceDirectory="$(_PackageStageDir)" DestinationFile="$(_PackageZip)" Overwrite="true" />
+    <Message Importance="high" Text="$(AssemblyName) -> $(_PackageZip)" />
+  </Target>
+</Project>

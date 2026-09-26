@@ -1,0 +1,8 @@
+# Textdateien im Repository mit LF, die Solution-Datei mit CRLF (so schreibt sie Visual Studio).
+* text=auto eol=lf
+*.sln text eol=crlf
+
+*.png binary
+*.jpg binary
+*.dll binary
+*.zip binary

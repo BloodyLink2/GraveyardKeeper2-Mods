@@ -1,0 +1,18 @@
+ZOMBIE PRODUCTIVITY: Changelog
+==============================
+
+1.1.0 (2026-09-24)
+------------------
+- Translations: the settings (F1 menu and GK2 Mod Framework menu) and the mod description can now
+  be translated with language files of the GK2 Mod Framework (0.1.8 or newer). English and German
+  are included.
+- Checked against the game update 1.0.0.5: no changes needed.
+
+1.0.0 (2026-09-24)
+------------------
+Initial release:
+- Work speed up to 10x for zombies at workbenches, on conveyors and in the garden. The extra hits
+  are carried out too, so the speed-up does not stop at about 5x.
+- Mastery bonus: extra mastery levels for working zombies (levels, not a multiplier; the game
+  allows at most 3 cells per hit).
+- Settings in game via F1 (ConfigurationManager) or the GK2 Mod Framework menu.

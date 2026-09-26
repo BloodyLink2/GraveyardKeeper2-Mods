@@ -1,0 +1,11 @@
+{
+  "mod.description": "Zombies arbeiten an Werkbänken und im Garten schneller (bis 10x) und bekommen auf Wunsch zusätzliche Meisterschaft.",
+  "Enabled.name": "Mod aktiv",
+  "Enabled.description": "Schaltet die Mod ein oder aus (wirkt sofort).",
+  "SpeedMultiplier.name": "Arbeitstempo",
+  "SpeedMultiplier.description": "Wie schnell Zombies an Werkbänken und im Garten arbeiten (1.0 = normal, bis 10x).",
+  "SpeedMultiplier.hint": "Wie schnell Zombies an Werkbänken und im Garten arbeiten (1.0 = normal, max. 10.0).",
+  "MasteryBonus.name": "Meisterschafts-Bonus (Stufen)",
+  "MasteryBonus.description": "Zusätzliche Meisterschafts-Stufen für arbeitende Zombies (0 = normal). Das ist kein Multiplikator. Mehr Meisterschaft erlaubt Rezepte über ihrer Stufe und bringt mehr Fortschritt pro Schlag (Meisterschaft ÷ Rezeptstufe, das Spiel erlaubt höchstens 3 Felder pro Schlag).",
+  "MasteryBonus.hint": "Zusätzliche Meisterschafts-Stufen für arbeitende Zombies (0 = normal). Max. 3 Felder pro Schlag."
+}

@@ -1,0 +1,14 @@
+{
+  "mod.description": "Hold sermons on any day and as often as you like (adjustable), optionally without Gratitude.",
+  "Enabled.name": "Mod enabled",
+  "Enabled.description": "Turns the mod on or off (takes effect immediately).",
+  "AnyDay.name": "Sermons on any day",
+  "AnyDay.description": "Allow sermons on every day of the week, not just on the Day of Wrath.",
+  "AnyDay.hint": "Not just on the Day of Wrath.",
+  "CeremoniesPerDay.name": "Sermons per day",
+  "CeremoniesPerDay.description": "How many sermons are allowed per day (0 = unlimited). Unless \"Ignore Gratitude\" is on, every sermon still consumes Gratitude equal to the number of parishioners. That remains the natural limit.",
+  "CeremoniesPerDay.hint": "0 = unlimited. Gratitude is still consumed unless ignored.",
+  "IgnoreGratitude.name": "Ignore Gratitude",
+  "IgnoreGratitude.description": "Sermons no longer depend on Gratitude: the number of parishioners is set by church quality alone and no Gratitude is consumed. Takes effect the next time you open the prayer window.",
+  "IgnoreGratitude.hint": "Parishioners = church quality, no Gratitude is consumed."
+}

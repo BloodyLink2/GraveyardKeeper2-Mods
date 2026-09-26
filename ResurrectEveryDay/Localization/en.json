@@ -1,0 +1,11 @@
+{
+  "mod.description": "Resurrect zombies on any day and as often as you like, not just once on the Day of Envy.",
+  "Enabled.name": "Mod enabled",
+  "Enabled.description": "Turns the mod on or off (takes effect immediately).",
+  "AnyDay.name": "Resurrect on any day",
+  "AnyDay.description": "Allow resurrections on every day of the week, not just on the Day of Envy.",
+  "AnyDay.hint": "Not just on the Day of Envy.",
+  "UnlimitedPower.name": "Unlimited storm power",
+  "UnlimitedPower.description": "The power switch in the resurrection lab always has power, so you can resurrect as often as you like. Off = vanilla: the power recharges once a week at the end of the Day of Lust and is used up by a resurrection.",
+  "UnlimitedPower.hint": "The lab always has power. Off = recharges once a week."
+}

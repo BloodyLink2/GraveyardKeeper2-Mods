@@ -1,0 +1,89 @@
+===== NAME =====
+Tireless Keeper
+
+===== BRIEF OVERVIEW (max. 350 characters) =====
+Health and energy regenerate over time, insanity slowly fades and sleep deprivation builds up slower. Optional infinite health/energy, faster work at tables and sleeping with a full energy bar (the game only saves when you sleep). Every value is adjustable in game via F1 or the GK2 Mod Framework menu.
+
+===== FILE DESCRIPTION =====
+New option "Your work speed at tables": more progress per hit when you work at a table yourself. Copy the BepInEx folder into your Graveyard Keeper 2 game folder (overwrite the old version). Requires BepInEx 5.4.23.5 (x64).
+
+===== CHANGELOG =====
+1.2.0
+- New option "Your work speed at tables" (1.0 = normal, up to 10x): more progress per hit when you work at a table yourself, such as workbenches, the autopsy and embalming table or the study table.
+1.1.0
+- Translations: the settings (F1 menu and GK2 Mod Framework menu) and the mod description can now be translated with language files of the GK2 Mod Framework (0.1.8 or newer). English and German are included.
+1.0.0
+- Initial release.
+
+===== DESCRIPTION (BBCode) =====
+[size=5][b]Tireless Keeper[/b][/size]
+
+Tired of running out of energy halfway through your to-do list? Tireless Keeper lets your keeper recover on the go: health and energy regenerate in real time, insanity slowly fades and sleep deprivation takes longer to set in. Everything is adjustable, from a gentle quality-of-life boost to full god mode.
+
+[size=4][b]Features[/b][/size]
+[list]
+[*][b]Health regeneration[/b]: 0.5 HP per second by default (0 to 10), also during combat.
+[*][b]Energy regeneration[/b]: 0.2 energy per second by default (0 to 5).
+[*][b]Insanity fades[/b]: 0.1 per second by default (0 to 5). Insanity lowers your maximum energy (max = 100 - insanity), so this gives you your full energy bar back over time.
+[*][b]Slower sleep deprivation[/b]: the lack-of-sleep debuff kicks in after 4 days instead of 2 by default. 1.0 = vanilla, 0 = never.
+[*][b]Sleep with full energy[/b]: the bed no longer refuses with "no need to sleep". Since the game only saves when you sleep, you can now save whenever you want. (On by default.)
+[*][b]Infinite health[/b] (optional): no damage at all, health stays full.
+[*][b]Infinite energy[/b] (optional): work costs no energy and no task fails for lack of energy, not even at high insanity.
+[*][b]Your work speed at tables[/b]: each of your hits at a workbench, the autopsy or embalming table, the study table and the like makes up to 10x more progress. Every hit still costs energy as usual, and recipes above your mastery stay locked. (1.0 = normal by default.)
+[/list]
+Regeneration runs in real time and only while you are actually playing: not in the main menu, not while paused and not while sleeping. All settings apply instantly, no restart needed. The mod stores no data of its own in your save game, so you can add or remove it at any time.
+
+[size=4][b]Settings[/b][/size]
+[list]
+[*][b]In game:[/b] press [b]F1[/b] (BepInEx ConfigurationManager) or open [b]Mods[/b] in the main menu or the pause menu (GK2 Mod Framework). Both can be installed together, and the values always stay in sync.
+[*][b]Config file:[/b] BepInEx/config/de.gk2mods.playerregeneration.cfg
+[/list]
+
+[size=4][b]Requirements[/b][/size]
+[list]
+[*][b]BepInEx 5.4.23.5 (x64)[/b]: installed in the game folder, game started once.
+[*]Optional: [b]GK2 Mod Framework[/b] 0.1.12: settings in the Mods menu (main menu and pause menu) and translated texts (0.1.8 or newer).
+[*]Optional: [b]BepInEx.ConfigurationManager[/b] v19.0: settings via F1.
+[/list]
+
+[size=4][b]Installation[/b][/size]
+[list=1]
+[*]Install BepInEx 5 (x64) and start the game once.
+[*]Extract the archive and copy the [b]BepInEx[/b] folder into your Graveyard Keeper 2 game folder.
+[*]The mod is now located at BepInEx/plugins/TirelessKeeper/TirelessKeeper.dll
+[/list]
+To check that it works, look for "Tireless Keeper 1.2.0 loaded" in BepInEx/LogOutput.log.
+
+[size=4][b]Translations[/b][/size]
+With the GK2 Mod Framework (0.1.8 or newer), the settings and the mod description appear in your game language. English and German are included. To add your language, copy [i]BepInEx/plugins/GK2.Framework/Localization/playerregeneration/en.json[/i] to a file named after your language code (e.g. [i]ko.json[/i]) in the same folder and translate the texts on the right side. Section headings in the Mods menu stay in English. Restart the game to see changes. Send me your file and I will gladly include it in the next version!
+
+[size=4][b]Uninstall[/b][/size]
+Delete the folders BepInEx/plugins/TirelessKeeper and BepInEx/plugins/GK2.Framework/Localization/playerregeneration. Your save games are not affected.
+
+[size=4][b]Good to know[/b][/size]
+[list]
+[*]Some recipes require a minimum amount of insanity. If you need it, set "Insanity reduction per second" to 0.
+[*]With [i]Infinite health[/i] on, a scene that waits for the player to take damage or die cannot continue. Just turn it off briefly.
+[*]A sleep deprivation debuff that is already active only goes away with the next sleep.
+[/list]
+
+[size=4][b]Compatibility[/b][/size]
+Works with or without the GK2 Mod Framework. Other mods that also change player health, energy, insanity or sleep may conflict.
+
+[size=4][b]Other Mods[/b][/size]
+[list]
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/83][b]Sermon Every Day[/b][/url]: hold sermons on any day of the week and as often as you like.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/87][b]Resurrect Every Day[/b][/url]: resurrect zombies on any day of the week and as often as you like.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/89][b]Graveyard Automation[/b][/url]: finished items go straight into a nearby chest, ovens run on their own and refuel themselves.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/90][b]Zombie Productivity[/b][/url]: zombies work up to 10x faster at workbenches and in the garden, with optional extra mastery.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/113][b]Bigger Storage[/b][/url]: up to 100 extra slots for every chest and optional stacks of up to 300.
+[/list]
+
+===== SHOUT OUTS =====
+[list]
+[*][b]Lazy Bear Games[/b] for Graveyard Keeper 2.
+[*][b]The BepInEx team[/b] for BepInEx, which makes code mods possible in the first place.
+[*][b]Andreas Pardeike[/b] for Harmony, the patching library behind this mod.
+[*][b]ManlyMarco and the BepInEx team[/b] for ConfigurationManager and its F1 settings menu.
+[*][b]SuperMan4eg[/b] for the GK2 Mod Framework and its in-game Mods menu.
+[/list]

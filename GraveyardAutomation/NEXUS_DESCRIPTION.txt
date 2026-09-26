@@ -1,0 +1,131 @@
+===== NAME =====
+Graveyard Automation
+
+===== BRIEF OVERVIEW (max. 350 characters) =====
+Automate your crafting: finished items go straight into a chest next to the station, ovens keep running on their own, beehives harvest themselves, fuel storages refill from your chests and recipes repeat up to 999 times. Ovens can even pick recipes from nearby chests, Stardew style. Adjustable station speed, everything configurable in game.
+
+===== SHORT DESCRIPTION =====
+Finished items go straight into a nearby chest, ovens run on their own and refuel themselves. Configurable in game.
+
+===== FILE DESCRIPTION =====
+New option "Harvest beehives": full beehives are harvested into a nearby chest automatically. Copy the BepInEx folder into your Graveyard Keeper 2 game folder (overwrite the old version). Requires BepInEx 5.4.23.5 (x64).
+
+===== CHANGELOG =====
+1.7.0
+- New option "Harvest beehives" (on by default): full beehives are harvested automatically, as if you did it yourself. The honey and beeswax go into a chest within the search radius, and the hive starts filling up again. Beehives also get their own switch under "Automated stations". Wild honey nests are left alone.
+- Checked against the game patch 1.006 and GK2 Mod Framework 0.1.12: no changes needed. With 0.1.12 you can also change the settings in game via the Mods button in the pause menu.
+- Reworded some texts.
+1.6.1
+- Fixed: when only part of a station's output fit into the chest, the rest could get lost; and extra items coming out of a finished craft could drop on the ground even with "Drop on the ground if no chest" off. The rest now goes into other chests within the search radius, then anywhere in the area; only if no chest has room at all does it drop, and the log says so.
+1.6.0
+- New: one switch per kind of automated station ("Automated stations" in F1, "Stations" in the Mods menu). After loading a save, every kind of station the mod automates there is listed; turn one off and the mod leaves that kind of station completely alone. All on by default.
+1.5.0
+- New option "Pick recipes for zombie workbenches" (off by default): an idle zombie picks a recipe it can make from the ingredients in nearby storages, crafts it once and picks again, like the ovens do.
+1.4.0
+- New option "Zombie ingredients from chests" (on by default): zombie workers take the ingredients they need straight from the storages within the search radius, so no other zombie has to bring them anymore. Ingredients another zombie is already bringing are left to it.
+1.3.0
+- "Pick recipes from nearby chests" now crafts one at a time and checks all unlocked recipes again after each one: stations prefer recipes no other station in the area is making, then the result you have the least of. Several ovens share the work and your stock stays balanced.
+- The description of "Station speed" now says clearly that tables you work at yourself (workbenches, autopsy and embalming table) are not affected.
+1.2.0
+- Translations: the settings (F1 menu and GK2 Mod Framework menu) and the mod description can now be translated with language files of the GK2 Mod Framework (0.1.8 or newer). English and German are included.
+1.1.0
+- New option "Collect research points" (on by default): the research points of stations the mod collects for you fly straight to you, like when you sleep, instead of dropping next to the station.
+- New option "Empty wells into chests" (on by default): the water of upgraded wells is moved into a nearby chest, so the well never stops producing.
+- Fixed: finished items could end up in the upgraded well (or other objects with storage that are not chests) when it was empty and there was no chest nearby. Only real chests are used now.
+1.0.0
+- Initial release.
+
+===== TAGS =====
+Nexus tags: Quality of Life, Gameplay, Crafting (if available)
+Custom tags: Automation, Automate, Crafting, Chest, Storage, Oven, Zombies, Fuel, Stardew, BepInEx, GK2 Mod Framework
+
+===== DESCRIPTION (BBCode) =====
+[size=5][b]Graveyard Automation[/b][/size]
+
+Tired of running from oven to oven just to pick up finished items? In vanilla Graveyard Keeper 2 every station stops after each craft and waits for you: zombies hold their finished item until you take it, ovens keep their output inside until you collect it, and fuel storages only refill when you do it by hand. Graveyard Automation takes care of all that: put a chest next to your stations and let them work.
+
+[size=4][b]Features[/b][/size]
+[list]
+[*][b]Zombie workbenches[/b]: items finished by zombie workers go straight into a chest next to the workbench. The zombie keeps working right away instead of waiting for you. (On by default.)
+[*][b]Zombie ingredients from chests[/b]: zombie workers take the ingredients they need straight from the storages next to their workbench, so no second zombie has to bring them. Ingredients another zombie is already bringing are left to it. (On by default.)
+[*][b]Auto-crafting stations[/b]: ovens, distillers and other stations that craft on their own are collected automatically. The items go into a nearby chest and the station starts its next craft, even while you are somewhere else. (On by default.)
+[*][b]Collect research points[/b]: the research points (the orbs) of these stations fly straight to you, like when you sleep, wherever you are. Turn it off to have them drop next to the station instead, just like when you collect by hand. Zombie workers keep their research points as usual (they spend them on their own skills). (On by default.)
+[*][b]Empty wells into chests[/b]: an upgraded well fills up with water and stops once it is full. The mod moves the water into a chest within the search radius every few seconds, so the well keeps producing. (On by default.)
+[*][b]Harvest beehives[/b]: a full beehive waits for you to harvest it. The mod does that for you, as if you did it yourself: the honey and beeswax go into a chest within the search radius, and the hive starts filling up again. Wild honey nests are left alone. (On by default.)
+[*][b]Refuel from chests[/b]: when a station waits because it is out of fuel, the fuel storage in the same area makes exactly the fuel it needs from materials in your chests (e.g. wood). Only as much as needed, so your wood is not burnt all at once. (On by default.)
+[*][b]Repeat recipes (999x)[/b]: add a recipe with count 1 to the queue of an oven or a zombie workbench and it is set to 999, so the station keeps producing as long as there are ingredients. Pick a different count in the craft window to keep it, or lower it with "-" in the queue. (On by default.)
+[*][b]Pick recipes from nearby chests[/b]: Stardew style. An idle oven looks into the chests next to it. If all ingredients of one of its recipes are there, it crafts that recipe once and then checks again, so it keeps running and switches between all its unlocked recipes. Several ovens share the work instead of all making the same thing, and they make first what you have the least of. The ingredients come from those chests first. (Off by default.)
+[*][b]Pick recipes for zombie workbenches[/b]: the same for workbenches with a zombie worker. An idle zombie picks a recipe it can make (right tool and enough mastery) from the ingredients in nearby storages, crafts it once and picks again. Together with the zombie options above, a zombie workbench runs completely on its own. (Off by default.)
+[*][b]Station speed[/b]: make ovens, distillers and the like work up to 10x faster. Garden beds, town building construction and stations with a zombie worker are not affected. For faster zombies, use [url=https://www.nexusmods.com/graveyardkeeper2/mods/90]Zombie Productivity[/url]. Tables you work at yourself (workbenches, autopsy and embalming table) are not affected either. To speed up your own work there, use [url=https://www.nexusmods.com/graveyardkeeper2/mods/79]Tireless Keeper[/url]. (1.0 = normal by default.)
+[*][b]Chest search radius[/b]: how far a chest may be from the station (default 3, roughly 1 per tile; 0 = any chest in the same area). Chests that already hold the item are preferred, otherwise the nearest one is used.
+[*][b]Automated stations[/b]: one switch per kind of station. After loading a save, the settings list every kind of station the mod automates there (ovens, compost heaps, wells, beehives, workbenches with a zombie worker …). Turn one off and the mod leaves that kind of station completely alone. (All on by default.)
+[*][b]Drop on the ground if no chest[/b]: if there is no chest with room nearby, finished items drop next to the station instead, so ovens and zombies never stop. (Off by default. Then they wait for you as usual.)
+[/list]
+If there is no chest in range or the chest is full, everything works as in vanilla. Once the chest has room again, waiting items are moved in automatically. This also works after loading a save. The mod stores no data of its own in your save game, so you can add or remove it at any time.
+
+[size=4][b]How to set up a fully automatic oven[/b][/size]
+[list=1]
+[*]Put a chest right next to the oven.
+[*]Make sure the fuel storage in the same area can make fuel, and keep some fuel material (e.g. wood) in your chests.
+[*]Either queue a recipe once (it becomes 999x), or turn on [i]Pick recipes from nearby chests[/i] and simply put the ingredients into the chest.
+[*]Refill your chests now and then, and the oven does the rest.
+[/list]
+
+[size=4][b]Settings[/b][/size]
+[list]
+[*][b]In game:[/b] press [b]F1[/b] (BepInEx ConfigurationManager) or open [b]Mods[/b] in the main menu or the pause menu (GK2 Mod Framework). Both can be installed together, and the values always stay in sync.
+[*][b]Config file:[/b] BepInEx/config/de.gk2mods.graveyardautomation.cfg
+[/list]
+
+[size=4][b]Requirements[/b][/size]
+[list]
+[*][b]BepInEx 5.4.23.5 (x64)[/b]: installed in the game folder, game started once.
+[*]Optional: [b]GK2 Mod Framework[/b] 0.1.12: settings in the Mods menu (main menu and pause menu) and translated texts (0.1.8 or newer).
+[*]Optional: [b]BepInEx.ConfigurationManager[/b] v19.0: settings via F1.
+[/list]
+
+[size=4][b]Installation[/b][/size]
+[list=1]
+[*]Install BepInEx 5 (x64) and start the game once.
+[*]Extract the archive and copy the [b]BepInEx[/b] folder into your Graveyard Keeper 2 game folder.
+[*]The mod is now located at BepInEx/plugins/GraveyardAutomation/GraveyardAutomation.dll
+[/list]
+To check that it works, look for "Graveyard Automation 1.7.0 loaded" in BepInEx/LogOutput.log.
+
+[size=4][b]Translations[/b][/size]
+With the GK2 Mod Framework (0.1.8 or newer), the settings and the mod description appear in your game language. English and German are included. To add your language, copy [i]BepInEx/plugins/GK2.Framework/Localization/graveyardautomation/en.json[/i] to a file named after your language code (e.g. [i]ko.json[/i]) in the same folder and translate the texts on the right side. Section headings in the Mods menu stay in English. Restart the game to see changes. Send me your file and I will gladly include it in the next version!
+
+[size=4][b]Uninstall[/b][/size]
+Delete the folders BepInEx/plugins/GraveyardAutomation and BepInEx/plugins/GK2.Framework/Localization/graveyardautomation. Your save games are not affected.
+
+[size=4][b]Good to know[/b][/size]
+[list]
+[*]Only real chests are used. Other objects with storage, like the upgraded well, never receive items.
+[*]Big items (crates and the like) still drop on the ground as usual. Conveyor chests are never used, so conveyors keep working as in vanilla.
+[*]Stations take their ingredients from all chests in the area, as in vanilla. With [i]Pick recipes from nearby chests[/i] on, they take them from the chests next to them first.
+[*]Finished items may go into the same chest the ingredients come from. If they are ingredients of another recipe of that station, it will process them further.
+[*]A Caretaker zombie keeps working alongside the mod. Items it has already claimed are left to it.
+[*]The log tells you once per station why it cannot deliver, e.g. "oven_1 is ready, but no chest with room within the search radius (nearest chest is 3.4 away)". Then move the chest closer or raise the search radius.
+[/list]
+
+[size=4][b]Compatibility[/b][/size]
+Works with or without the GK2 Mod Framework. Other mods that also change crafting output, the craft queue or station speed may conflict.
+
+[size=4][b]Other Mods[/b][/size]
+[list]
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/79][b]Tireless Keeper[/b][/url]: health and energy regenerate, insanity fades and sleep deprivation builds up slower.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/83][b]Sermon Every Day[/b][/url]: hold sermons on any day of the week and as often as you like.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/87][b]Resurrect Every Day[/b][/url]: resurrect zombies on any day of the week and as often as you like.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/90][b]Zombie Productivity[/b][/url]: zombies work up to 10x faster at workbenches and in the garden, with optional extra mastery.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/113][b]Bigger Storage[/b][/url]: up to 100 extra slots for every chest and optional stacks of up to 300.
+[/list]
+
+===== SHOUT OUTS =====
+[list]
+[*][b]Lazy Bear Games[/b] for Graveyard Keeper 2.
+[*][b]The BepInEx team[/b] for BepInEx, which makes code mods possible in the first place.
+[*][b]Andreas Pardeike[/b] for Harmony, the patching library behind this mod.
+[*][b]ManlyMarco and the BepInEx team[/b] for ConfigurationManager and its F1 settings menu.
+[*][b]SuperMan4eg[/b] for the GK2 Mod Framework and its in-game Mods menu.
+[*][b]Pathoschild[/b], whose Automate mod for Stardew Valley inspired the "chests next to machines" idea.
+[/list]

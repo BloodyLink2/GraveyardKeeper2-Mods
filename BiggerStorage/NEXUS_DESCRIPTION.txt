@@ -1,0 +1,90 @@
+===== NAME =====
+Bigger Storage
+
+===== BRIEF OVERVIEW (max. 350 characters) =====
+More room for your stuff: every chest gets up to 100 extra slots (also the ones you already built) and, if you like, items stack up to 300 per slot in all inventories. Adjustable in game via F1 or the GK2 Mod Framework menu, with a safe way back when you want to remove it.
+
+===== SHORT DESCRIPTION =====
+Up to 100 extra slots for every chest and optional stacks of up to 300. Configurable in game.
+
+===== FILE DESCRIPTION =====
+Initial release. Copy the BepInEx folder into your Graveyard Keeper 2 game folder. Requires BepInEx 5.4.23.5 (x64).
+
+===== CHANGELOG =====
+1.0.0
+- Initial release.
+
+===== TAGS =====
+Nexus tags: Quality of Life, Gameplay, Items and Objects (if available)
+Custom tags: Storage, Chest, Inventory, Stack, Stack Size, Slots, BepInEx, GK2 Mod Framework
+
+===== DESCRIPTION (BBCode) =====
+[size=5][b]Bigger Storage[/b][/size]
+
+Chests full again? Bigger Storage gives every chest more slots and, if you want, lets your items stack much higher, so you spend less time building chests and sorting stacks.
+
+[size=4][b]Features[/b][/size]
+[list]
+[*][b]Extra chest slots[/b]: 0 to 100 (default 10). Every chest gets this many slots on top of its normal size, also the ones you already built. Conveyor chests, fuel storages, wells and other objects with storage are left alone.
+[*][b]Stack size[/b]: 0 to 300 in steps of 10 (default 0 = normal). How many items fit on one slot in every inventory: yours, chests and stations. Items that already stack higher keep their size, and items that do not stack (like tools) stay single.
+[*][b]Prepare for uninstall[/b]: turn it on before you remove the mod. Chests go back to their normal size and stacks to normal. A chest that is still too full keeps the slots it needs and shrinks as soon as you take items out, and a message on screen tells you how many chests are left and when you are done. (Off by default.)
+[/list]
+All settings apply instantly, no restart needed.
+
+[size=4][b]Why not a stack size only for chests?[/b][/size]
+The game uses one stack size per item everywhere: when you put items in, merge, split, drop or craft them. A different rule only for chests would have to catch all of these places, and missing one could lose or duplicate items when you move them between your inventory and a chest. So the stack size applies to all inventories alike.
+
+[size=4][b]Settings[/b][/size]
+[list]
+[*][b]In game:[/b] press [b]F1[/b] (BepInEx ConfigurationManager) or open [b]Mods[/b] in the main menu or the pause menu (GK2 Mod Framework). Both can be installed together, and the values always stay in sync.
+[*][b]Config file:[/b] BepInEx/config/de.gk2mods.biggerstorage.cfg
+[/list]
+
+[size=4][b]Requirements[/b][/size]
+[list]
+[*][b]BepInEx 5.4.23.5 (x64)[/b]: installed in the game folder, game started once.
+[*]Optional: [b]GK2 Mod Framework[/b] 0.1.12: settings in the Mods menu (main menu and pause menu) and translated texts (0.1.8 or newer).
+[*]Optional: [b]BepInEx.ConfigurationManager[/b] v19.0: settings via F1.
+[/list]
+
+[size=4][b]Installation[/b][/size]
+[list=1]
+[*]Install BepInEx 5 (x64) and start the game once.
+[*]Extract the archive and copy the [b]BepInEx[/b] folder into your Graveyard Keeper 2 game folder.
+[*]The mod is now located at BepInEx/plugins/BiggerStorage/BiggerStorage.dll
+[/list]
+To check that it works, look for "Bigger Storage 1.0.0 loaded" in BepInEx/LogOutput.log. After loading a save it also tells you how many chests were resized.
+
+[size=4][b]Translations[/b][/size]
+With the GK2 Mod Framework (0.1.8 or newer), the settings and the mod description appear in your game language. English and German are included. To add your language, copy [i]BepInEx/plugins/GK2.Framework/Localization/biggerstorage/en.json[/i] to a file named after your language code (e.g. [i]ko.json[/i]) in the same folder and translate the texts on the right side. Section headings in the Mods menu stay in English. Restart the game to see changes. Send me your file and I will gladly include it in the next version!
+
+[size=4][b]Uninstall[/b][/size]
+The chest size is stored in your save game, like everything else about a chest. So before you remove the mod, turn on [b]Prepare for uninstall[/b], take items out of the chests the message tells you about until it says all chests are back to normal, and sleep once so the game saves. Then delete the folders BepInEx/plugins/BiggerStorage and BepInEx/plugins/GK2.Framework/Localization/biggerstorage. Bigger stacks you already have stay as they are. The game handles them fine without the mod.
+
+[size=4][b]Good to know[/b][/size]
+[list]
+[*]Lowering "Extra chest slots" (or turning the mod off) shrinks chests again, but never below the slots in use, so nothing gets lost.
+[*]Lowering the stack size keeps bigger stacks you already have; they just do not grow anymore.
+[*]Pairs well with [url=https://www.nexusmods.com/graveyardkeeper2/mods/89][b]Graveyard Automation[/b][/url]: more room in the chests next to your stations means they run longer on their own.
+[/list]
+
+[size=4][b]Compatibility[/b][/size]
+Works with or without the GK2 Mod Framework. Other mods that also change chest sizes or stack sizes may conflict. Mods that change how many big items (logs, stones) you can carry over your head are not affected.
+
+[size=4][b]Other Mods[/b][/size]
+[list]
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/89][b]Graveyard Automation[/b][/url]: finished items go straight into a nearby chest, ovens run on their own and refuel themselves.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/90][b]Zombie Productivity[/b][/url]: zombies work up to 10x faster at workbenches and in the garden, with optional extra mastery.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/79][b]Tireless Keeper[/b][/url]: health and energy regenerate, insanity fades and sleep deprivation builds up slower.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/83][b]Sermon Every Day[/b][/url]: hold sermons on any day of the week and as often as you like.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/87][b]Resurrect Every Day[/b][/url]: resurrect zombies on any day of the week and as often as you like.
+[/list]
+
+===== SHOUT OUTS =====
+[list]
+[*][b]Lazy Bear Games[/b] for Graveyard Keeper 2.
+[*][b]The BepInEx team[/b] for BepInEx, which makes code mods possible in the first place.
+[*][b]Andreas Pardeike[/b] for Harmony, the patching library behind this mod.
+[*][b]ManlyMarco and the BepInEx team[/b] for ConfigurationManager and its F1 settings menu.
+[*][b]SuperMan4eg[/b] for the GK2 Mod Framework and its in-game Mods menu.
+[/list]

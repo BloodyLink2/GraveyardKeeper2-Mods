@@ -1,0 +1,20 @@
+# Build-Ausgaben
+bin/
+obj/
+Releases/
+
+# Rechnerspezifische Pfade (Vorlage: LocalPaths.props.example)
+LocalPaths.props
+
+# Editoren und Werkzeuge
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+.claude/
+.claude-flow/
+__pycache__/
+
+# Bilder für die Nexus-Seiten (nicht Teil des Quellcodes)
+Screenshots/

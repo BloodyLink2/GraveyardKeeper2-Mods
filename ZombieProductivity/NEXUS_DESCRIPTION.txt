@@ -1,0 +1,87 @@
+===== NAME =====
+Zombie Productivity
+
+===== BRIEF OVERVIEW (max. 350 characters) =====
+Make your zombie workers faster: up to 10x work speed at workbenches, on conveyors and in the garden. The extra hits are really carried out, so it does not stop at 5x. Optionally give working zombies extra mastery levels to unlock harder recipes. Adjustable in game via F1 or the GK2 Mod Framework menu.
+
+===== SHORT DESCRIPTION =====
+Zombies work up to 10x faster at workbenches and in the garden, with optional extra mastery. Configurable in game.
+
+===== FILE DESCRIPTION =====
+Settings can now be translated (GK2 Mod Framework 0.1.8 or newer), English and German included. Copy the BepInEx folder into your Graveyard Keeper 2 game folder (overwrite the old version). Requires BepInEx 5.4.23.5 (x64).
+
+===== CHANGELOG =====
+1.1.0
+- Translations: the settings (F1 menu and GK2 Mod Framework menu) and the mod description can now be translated with language files of the GK2 Mod Framework (0.1.8 or newer). English and German are included.
+1.0.0
+- Initial release.
+
+===== TAGS =====
+Nexus tags: Quality of Life, Gameplay, Cheating (because of the mastery bonus)
+Custom tags: Zombies, Zombie Workers, Speed, Mastery, Crafting, Garden, BepInEx, GK2 Mod Framework
+
+===== DESCRIPTION (BBCode) =====
+[size=5][b]Zombie Productivity[/b][/size]
+
+Your zombies are loyal, but not exactly fast. Zombie Productivity lets you decide how quickly they work (at workbenches, on conveyor belts and in the garden) and can give them extra mastery so they take on recipes above their level.
+
+[size=4][b]Features[/b][/size]
+[list]
+[*][b]Work speed[/b]: 0.1 to 10.0 (default 1.0 = normal). Affects zombies at workbenches, conveyor zombies and gardeners when sowing and harvesting. The game lets a zombie hit at most once per work check, so simply speeding up time stops at about 5x. This mod also carries out the extra hits, so up to 10x really works.
+[*][b]Mastery bonus[/b]: 0 to 10 extra mastery levels for working zombies (default 0). This is not a multiplier: +7 means seven levels on top of the zombie's own mastery. Higher mastery lets zombies make recipes above their level and gives more progress per hit (mastery ÷ recipe level, and the game allows at most 3 cells per hit).
+[/list]
+All settings apply instantly, no restart needed. The mod stores no data of its own in your save game, so you can add or remove it at any time.
+
+[size=4][b]Settings[/b][/size]
+[list]
+[*][b]In game:[/b] press [b]F1[/b] (BepInEx ConfigurationManager) or open [b]Mods[/b] in the main menu or the pause menu (GK2 Mod Framework). Both can be installed together, and the values always stay in sync.
+[*][b]Config file:[/b] BepInEx/config/de.gk2mods.zombieproductivity.cfg
+[/list]
+
+[size=4][b]Requirements[/b][/size]
+[list]
+[*][b]BepInEx 5.4.23.5 (x64)[/b]: installed in the game folder, game started once.
+[*]Optional: [b]GK2 Mod Framework[/b] 0.1.12: settings in the Mods menu (main menu and pause menu) and translated texts (0.1.8 or newer).
+[*]Optional: [b]BepInEx.ConfigurationManager[/b] v19.0: settings via F1.
+[/list]
+
+[size=4][b]Installation[/b][/size]
+[list=1]
+[*]Install BepInEx 5 (x64) and start the game once.
+[*]Extract the archive and copy the [b]BepInEx[/b] folder into your Graveyard Keeper 2 game folder.
+[*]The mod is now located at BepInEx/plugins/ZombieProductivity/ZombieProductivity.dll
+[/list]
+To check that it works, look for "Zombie Productivity 1.1.0 loaded" in BepInEx/LogOutput.log.
+
+[size=4][b]Translations[/b][/size]
+With the GK2 Mod Framework (0.1.8 or newer), the settings and the mod description appear in your game language. English and German are included. To add your language, copy [i]BepInEx/plugins/GK2.Framework/Localization/zombieproductivity/en.json[/i] to a file named after your language code (e.g. [i]ko.json[/i]) in the same folder and translate the texts on the right side. Section headings in the Mods menu stay in English. Restart the game to see changes. Send me your file and I will gladly include it in the next version!
+
+[size=4][b]Uninstall[/b][/size]
+Delete the folders BepInEx/plugins/ZombieProductivity and BepInEx/plugins/GK2.Framework/Localization/zombieproductivity. Your save games are not affected.
+
+[size=4][b]Good to know[/b][/size]
+[list]
+[*]Faster zombies finish their crafts sooner, but still wait for you to pick up the result. To have finished items go straight into a chest, combine it with [url=https://www.nexusmods.com/graveyardkeeper2/mods/89][b]Graveyard Automation[/b][/url].
+[*]The mastery bonus shows up in the zombie's mastery values, so you can see it in game.
+[/list]
+
+[size=4][b]Compatibility[/b][/size]
+Works with or without the GK2 Mod Framework. Other mods that also change how fast zombies work or their mastery may conflict.
+
+[size=4][b]Other Mods[/b][/size]
+[list]
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/89][b]Graveyard Automation[/b][/url]: finished items go straight into a nearby chest, ovens run on their own and refuel themselves.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/79][b]Tireless Keeper[/b][/url]: health and energy regenerate, insanity fades and sleep deprivation builds up slower.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/83][b]Sermon Every Day[/b][/url]: hold sermons on any day of the week and as often as you like.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/87][b]Resurrect Every Day[/b][/url]: resurrect zombies on any day of the week and as often as you like.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/113][b]Bigger Storage[/b][/url]: up to 100 extra slots for every chest and optional stacks of up to 300.
+[/list]
+
+===== SHOUT OUTS =====
+[list]
+[*][b]Lazy Bear Games[/b] for Graveyard Keeper 2.
+[*][b]The BepInEx team[/b] for BepInEx, which makes code mods possible in the first place.
+[*][b]Andreas Pardeike[/b] for Harmony, the patching library behind this mod.
+[*][b]ManlyMarco and the BepInEx team[/b] for ConfigurationManager and its F1 settings menu.
+[*][b]SuperMan4eg[/b] for the GK2 Mod Framework and its in-game Mods menu.
+[/list]

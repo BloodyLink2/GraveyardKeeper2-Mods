@@ -1,0 +1,9 @@
+<Project>
+  <!-- Copy this file to LocalPaths.props and set the path to your Graveyard Keeper 2 installation.
+       LocalPaths.props is ignored by git, so every machine can use its own paths. -->
+  <PropertyGroup>
+    <GameDir>C:\Program Files (x86)\Steam\steamapps\common\Graveyard Keeper 2</GameDir>
+    <!-- Optional: GK2.Framework.dll from somewhere else (default: BepInEx\plugins\GK2.Framework.dll in the game). -->
+    <!-- <FrameworkDll>C:\Path\To\GK2.Framework.dll</FrameworkDll> -->
+  </PropertyGroup>
+</Project>

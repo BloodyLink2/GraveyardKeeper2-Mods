@@ -1,0 +1,93 @@
+===== NAME =====
+Sermon Every Day
+
+===== BRIEF OVERVIEW (max. 350 characters) =====
+Hold sermons on any day of the week and as often as you like, not just once on the Day of Wrath. Optionally limit how many sermons are allowed per day, or ignore Gratitude entirely so your church is always full and nothing is consumed. Adjustable in game via F1 or the GK2 Mod Framework menu.
+
+===== SHORT DESCRIPTION =====
+Hold sermons on any day of the week and as often as you like, not just once on the Day of Wrath. Optionally ignore Gratitude entirely. Fully configurable in game.
+
+===== FILE DESCRIPTION =====
+Settings can now be translated (GK2 Mod Framework 0.1.8 or newer), English and German included. Copy the BepInEx folder into your Graveyard Keeper 2 game folder (overwrite the old version). Requires BepInEx 5.4.23.5 (x64).
+
+===== CHANGELOG =====
+1.2.0
+- Translations: the settings (F1 menu and GK2 Mod Framework menu) and the mod description can now be translated with language files of the GK2 Mod Framework (0.1.8 or newer). English and German are included.
+1.1.0
+- New option "Ignore Gratitude" (off by default): the number of parishioners depends on church quality alone and sermons no longer consume Gratitude.
+1.0.0
+- Initial release.
+
+===== TAGS =====
+Nexus tags: Quality of Life, Gameplay, Cheating (because of the optional "Ignore Gratitude" toggle)
+Custom tags: Sermon, Church, Faith, Gratitude, Day of Wrath, Prayer, BepInEx, GK2 Mod Framework
+
+===== DESCRIPTION (BBCode) =====
+[size=5][b]Sermon Every Day[/b][/size]
+
+In vanilla Graveyard Keeper 2 you can only preach once a week, on the Day of Wrath. Miss it, and you wait six days for your next chance to earn Faith. Sermon Every Day lifts that restriction: step up to the prayer stand on any day of the week and hold as many sermons as you like.
+
+[size=4][b]Features[/b][/size]
+[list]
+[*][b]Sermons on any day[/b]: on all six days of the week, not just the Day of Wrath. (On by default.)
+[*][b]Sermons per day[/b]: set a daily limit from 1 to 10, or 0 for unlimited (default). The limit also applies on the Day of Wrath.
+[*][b]Vanilla costs stay[/b]: every sermon still consumes Gratitude equal to the number of parishioners (parishioners = the lower of Gratitude and church quality). If you preach several times in a row, you need enough Gratitude for a decent congregation.
+[*][b]Ignore Gratitude[/b] (optional, off by default): sermons no longer depend on Gratitude at all. The number of parishioners, and with it the success chance, is set by church quality alone, and no Gratitude is consumed.
+[*]Once the daily limit is reached, the game shows its usual "available on the Day of Wrath" message. The next day you can preach again.
+[/list]
+All settings apply instantly, no restart needed. The mod does not change any save game value, so you can add or remove it at any time.
+
+[size=4][b]Settings[/b][/size]
+[list]
+[*][b]In game:[/b] press [b]F1[/b] (BepInEx ConfigurationManager) or open [b]Mods[/b] in the main menu or the pause menu (GK2 Mod Framework). Both can be installed together, and the values always stay in sync.
+[*][b]Config file:[/b] BepInEx/config/de.gk2mods.flexibleceremonies.cfg
+[/list]
+
+[size=4][b]Requirements[/b][/size]
+[list]
+[*][b]BepInEx 5.4.23.5 (x64)[/b]: installed in the game folder, game started once.
+[*]Optional: [b]GK2 Mod Framework[/b] 0.1.12: settings in the Mods menu (main menu and pause menu) and translated texts (0.1.8 or newer).
+[*]Optional: [b]BepInEx.ConfigurationManager[/b] v19.0: settings via F1.
+[/list]
+
+[size=4][b]Installation[/b][/size]
+[list=1]
+[*]Install BepInEx 5 (x64) and start the game once.
+[*]Extract the archive and copy the [b]BepInEx[/b] folder into your Graveyard Keeper 2 game folder.
+[*]The mod is now located at BepInEx/plugins/SermonEveryDay/SermonEveryDay.dll
+[/list]
+To check that it works, look for "Prayer stand check redirected.", "Gratitude cost redirected." and "Sermon Every Day 1.2.0 loaded" in BepInEx/LogOutput.log.
+
+[size=4][b]Translations[/b][/size]
+With the GK2 Mod Framework (0.1.8 or newer), the settings and the mod description appear in your game language. English and German are included. To add your language, copy [i]BepInEx/plugins/GK2.Framework/Localization/flexibleceremonies/en.json[/i] to a file named after your language code (e.g. [i]ko.json[/i]) in the same folder and translate the texts on the right side. Section headings in the Mods menu stay in English. Restart the game to see changes. Send me your file and I will gladly include it in the next version!
+
+[size=4][b]Uninstall[/b][/size]
+Delete the folders BepInEx/plugins/SermonEveryDay and BepInEx/plugins/GK2.Framework/Localization/flexibleceremonies. Your save games are not affected.
+
+[size=4][b]Good to know[/b][/size]
+[list]
+[*]The daily counter is kept in memory only. After loading a save, it starts over for the current day.
+[*]The "Ignore Gratitude" toggle takes effect the next time you open the prayer window.
+[*]If the log says "... not found" instead, a game update has changed the code and that part of the mod has no effect until it is updated.
+[/list]
+
+[size=4][b]Compatibility[/b][/size]
+Works with or without the GK2 Mod Framework. Other mods that also change when sermons are available may conflict.
+
+[size=4][b]Other Mods[/b][/size]
+[list]
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/87][b]Resurrect Every Day[/b][/url]: resurrect zombies on any day of the week and as often as you like.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/79][b]Tireless Keeper[/b][/url]: health and energy regenerate, insanity fades and sleep deprivation builds up slower.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/89][b]Graveyard Automation[/b][/url]: finished items go straight into a nearby chest, ovens run on their own and refuel themselves.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/90][b]Zombie Productivity[/b][/url]: zombies work up to 10x faster at workbenches and in the garden, with optional extra mastery.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/113][b]Bigger Storage[/b][/url]: up to 100 extra slots for every chest and optional stacks of up to 300.
+[/list]
+
+===== SHOUT OUTS =====
+[list]
+[*][b]Lazy Bear Games[/b] for Graveyard Keeper 2.
+[*][b]The BepInEx team[/b] for BepInEx, which makes code mods possible in the first place.
+[*][b]Andreas Pardeike[/b] for Harmony, the patching library behind this mod.
+[*][b]ManlyMarco and the BepInEx team[/b] for ConfigurationManager and its F1 settings menu.
+[*][b]SuperMan4eg[/b] for the GK2 Mod Framework and its in-game Mods menu.
+[/list]

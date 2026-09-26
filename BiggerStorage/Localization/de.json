@@ -1,0 +1,16 @@
+{
+  "mod.description": "Mehr Plätze für jede Truhe und auf Wunsch größere Stapel in allen Inventaren.",
+  "Enabled.name": "Mod aktiv",
+  "Enabled.description": "Schaltet die Mod ein oder aus (wirkt sofort). Aus = Truhen schrumpfen wieder auf ihre normale Größe, soweit ihr Inhalt es zulässt, und die Stapelgrößen sind wieder normal.",
+  "ExtraSlots.name": "Zusätzliche Truhenplätze",
+  "ExtraSlots.description": "Wie viele Plätze jede Truhe zusätzlich zu ihrer normalen Größe bekommt (0 = normal, bis 100). Gilt für alle Truhen, die man öffnen kann, auch für bereits gebaute. Verringern verkleinert die Truhen wieder, aber nie unter die belegten Plätze. Es geht also nichts verloren.",
+  "ExtraSlots.hint": "Plätze, die jede Truhe zusätzlich zu ihrer normalen Größe bekommt (0 = normal).",
+  "StackSize.name": "Stapelgröße",
+  "StackSize.description": "Wie viele Gegenstände auf einen Platz passen, in jedem Inventar: deinem, in Truhen und an Stationen (0 = normal, bis 300, in 10er-Schritten). Gegenstände, die schon höher stapeln, behalten ihren Wert, nicht stapelbare (z. B. Werkzeuge) bleiben einzeln. Verringern lässt vorhandene größere Stapel bestehen, sie wachsen nur nicht weiter.",
+  "StackSize.hint": "Gegenstände pro Platz in allen Inventaren (0 = normal, bis 300).",
+  "PrepareUninstall.name": "Deinstallation vorbereiten",
+  "PrepareUninstall.description": "Vor dem Entfernen der Mod einschalten: Truhen gehen auf ihre normale Größe zurück und Stapelgrößen auf normal, egal was sonst eingestellt ist. Eine Truhe, die noch mehr Gegenstände enthält als ihre normale Größe, behält die nötigen Zusatzplätze und schrumpft, sobald du etwas herausnimmst. Eine Meldung zeigt, wie viele Truhen noch zu voll sind. Sind alle Truhen wieder normal, einmal schlafen, damit das Spiel speichert, dann deinstallieren. Vorhandene größere Stapel bleiben, wie sie sind; das Spiel kommt auch ohne die Mod mit ihnen zurecht.",
+  "PrepareUninstall.hint": "Setzt alle Truhen und Stapel auf normal zurück, damit du die Mod gefahrlos entfernen kannst.",
+  "uninstall.pending": "Bigger Storage: {0} Truhe(n) enthalten noch mehr Gegenstände als ihre normale Größe. Nimm etwas heraus.",
+  "uninstall.done": "Bigger Storage: Alle Truhen haben wieder ihre normale Größe. Einmal schlafen zum Speichern, dann kannst du deinstallieren."
+}

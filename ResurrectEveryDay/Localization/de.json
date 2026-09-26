@@ -1,0 +1,11 @@
+{
+  "mod.description": "Zombies an jedem Tag und so oft du willst wiederbeleben, nicht nur einmal am Tag des Neids.",
+  "Enabled.name": "Mod aktiv",
+  "Enabled.description": "Schaltet die Mod ein oder aus (wirkt sofort).",
+  "AnyDay.name": "Wiederbelebung an jedem Tag",
+  "AnyDay.description": "Erlaubt Wiederbelebungen an jedem Wochentag, nicht nur am Tag des Neids.",
+  "AnyDay.hint": "Nicht nur am Tag des Neids.",
+  "UnlimitedPower.name": "Unbegrenzte Sturmenergie",
+  "UnlimitedPower.description": "Der Stromschalter im Wiederbelebungslabor hat immer Energie, du kannst also so oft wiederbeleben, wie du willst. Aus = wie im Originalspiel: Die Energie lädt sich einmal pro Woche am Ende des Tages der Lust auf und wird von einer Wiederbelebung verbraucht.",
+  "UnlimitedPower.hint": "Das Labor hat immer Energie. Aus = lädt sich einmal pro Woche auf."
+}

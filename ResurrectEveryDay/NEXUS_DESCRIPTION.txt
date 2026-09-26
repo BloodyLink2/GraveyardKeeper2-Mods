@@ -1,0 +1,88 @@
+===== NAME =====
+Resurrect Every Day
+
+===== BRIEF OVERVIEW (max. 350 characters) =====
+Resurrect zombies on any day of the week and as often as you like, not just once on the Day of Envy. The power switch in the resurrection lab always works and never runs out of storm power. Both options can be toggled separately in game via F1 or the GK2 Mod Framework menu.
+
+===== SHORT DESCRIPTION =====
+Resurrect zombies on any day and as often as you like, not just once on the Day of Envy. Fully configurable in game.
+
+===== FILE DESCRIPTION =====
+Settings can now be translated (GK2 Mod Framework 0.1.8 or newer), English and German included. Copy the BepInEx folder into your Graveyard Keeper 2 game folder (overwrite the old version). Requires BepInEx 5.4.23.5 (x64).
+
+===== CHANGELOG =====
+1.1.0
+- Translations: the settings (F1 menu and GK2 Mod Framework menu) and the mod description can now be translated with language files of the GK2 Mod Framework (0.1.8 or newer). English and German are included.
+1.0.0
+- Initial release.
+
+===== TAGS =====
+Nexus tags: Quality of Life, Gameplay, Cheating (because of "Unlimited storm power")
+Custom tags: Zombies, Resurrection, Day of Envy, Storm, BepInEx, GK2 Mod Framework
+
+===== DESCRIPTION (BBCode) =====
+[size=5][b]Resurrect Every Day[/b][/size]
+
+In vanilla Graveyard Keeper 2 you can only resurrect zombies on the Day of Envy. That is the only day the power switch in the resurrection lab works, and its storm power recharges just once a week. Prepared a table on the wrong day? Then your corpse waits until next week. Resurrect Every Day lifts that restriction: pull the switch whenever you like.
+
+[size=4][b]Features[/b][/size]
+[list]
+[*][b]Resurrect on any day[/b]: the power switch works on all six days of the week, not just the Day of Envy. (On by default.)
+[*][b]Unlimited storm power[/b]: the lab always has power, so you can resurrect as often as you like. Turn it off for the vanilla rhythm: the power recharges once a week at the end of the Day of Lust and is used up by a resurrection. (On by default.)
+[*][b]Nothing else changes[/b]: you still prepare the resurrection tables with a body, all main organs, the resurrection liquid and a collar, then pull the power switch as usual.
+[/list]
+All settings apply instantly, no restart needed. With unlimited power on, the mod does not use up your weekly vanilla power, so you can add or remove it at any time.
+
+[size=4][b]Settings[/b][/size]
+[list]
+[*][b]In game:[/b] press [b]F1[/b] (BepInEx ConfigurationManager) or open [b]Mods[/b] in the main menu or the pause menu (GK2 Mod Framework). Both can be installed together, and the values always stay in sync.
+[*][b]Config file:[/b] BepInEx/config/de.gk2mods.resurrecteveryday.cfg
+[/list]
+
+[size=4][b]Requirements[/b][/size]
+[list]
+[*][b]BepInEx 5.4.23.5 (x64)[/b]: installed in the game folder, game started once.
+[*]Optional: [b]GK2 Mod Framework[/b] 0.1.12: settings in the Mods menu (main menu and pause menu) and translated texts (0.1.8 or newer).
+[*]Optional: [b]BepInEx.ConfigurationManager[/b] v19.0: settings via F1.
+[/list]
+
+[size=4][b]Installation[/b][/size]
+[list=1]
+[*]Install BepInEx 5 (x64) and start the game once.
+[*]Extract the archive and copy the [b]BepInEx[/b] folder into your Graveyard Keeper 2 game folder.
+[*]The mod is now located at BepInEx/plugins/ResurrectEveryDay/ResurrectEveryDay.dll
+[/list]
+To check that it works, look for "Day check hooked.", "Power check redirected." and "Resurrect Every Day 1.1.0 loaded" in BepInEx/LogOutput.log.
+
+[size=4][b]Translations[/b][/size]
+With the GK2 Mod Framework (0.1.8 or newer), the settings and the mod description appear in your game language. English and German are included. To add your language, copy [i]BepInEx/plugins/GK2.Framework/Localization/resurrecteveryday/en.json[/i] to a file named after your language code (e.g. [i]ko.json[/i]) in the same folder and translate the texts on the right side. Section headings in the Mods menu stay in English. Restart the game to see changes. Send me your file and I will gladly include it in the next version!
+
+[size=4][b]Uninstall[/b][/size]
+Delete the folders BepInEx/plugins/ResurrectEveryDay and BepInEx/plugins/GK2.Framework/Localization/resurrecteveryday. Your save games are not affected.
+
+[size=4][b]Good to know[/b][/size]
+[list=1]
+[*]Like in vanilla, one pull of the power switch resurrects all prepared tables at once.
+[*]If the log says "... not found" instead, a game update has changed the code and that part of the mod has no effect until it is updated.
+[/list]
+
+[size=4][b]Compatibility[/b][/size]
+Works with or without the GK2 Mod Framework. Other mods that also change the resurrection lab or its power switch may conflict.
+
+[size=4][b]Other Mods[/b][/size]
+[list]
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/83][b]Sermon Every Day[/b][/url]: hold sermons on any day of the week and as often as you like.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/79][b]Tireless Keeper[/b][/url]: health and energy regenerate, insanity fades and sleep deprivation builds up slower.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/89][b]Graveyard Automation[/b][/url]: finished items go straight into a nearby chest, ovens run on their own and refuel themselves.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/90][b]Zombie Productivity[/b][/url]: zombies work up to 10x faster at workbenches and in the garden, with optional extra mastery.
+[*][url=https://www.nexusmods.com/graveyardkeeper2/mods/113][b]Bigger Storage[/b][/url]: up to 100 extra slots for every chest and optional stacks of up to 300.
+[/list]
+
+===== SHOUT OUTS =====
+[list]
+[*][b]Lazy Bear Games[/b] for Graveyard Keeper 2.
+[*][b]The BepInEx team[/b] for BepInEx, which makes code mods possible in the first place.
+[*][b]Andreas Pardeike[/b] for Harmony, the patching library behind this mod.
+[*][b]ManlyMarco and the BepInEx team[/b] for ConfigurationManager and its F1 settings menu.
+[*][b]SuperMan4eg[/b] for the GK2 Mod Framework and its in-game Mods menu.
+[/list]

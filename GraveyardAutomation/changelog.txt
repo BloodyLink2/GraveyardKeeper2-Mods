@@ -1,0 +1,83 @@
+GRAVEYARD AUTOMATION: Changelog
+===============================
+
+1.7.0 (2026-09-26)
+------------------
+- New option "Harvest beehives" (on by default): full beehives are harvested automatically, as if
+  you did it yourself. The honey and beeswax go into a chest within the search radius, and the
+  hive starts filling up again. Beehives also get their own switch under "Automated stations".
+  Wild honey nests are left alone.
+- Checked against the game patch 1.006 and GK2 Mod Framework 0.1.12: no changes needed. With
+  0.1.12 you can also change the settings in game via the Mods button in the pause menu.
+- Reworded some texts.
+
+1.6.1 (2026-09-25)
+------------------
+- Fixed: when only part of a station's output fit into the chest, the rest could get lost; and
+  extra items coming out of a finished craft could drop on the ground even with "Drop on the
+  ground if no chest" off. The rest now goes into other chests within the search radius, then
+  into any chest in the area; only if no chest has room at all does it drop, and the log says so.
+
+1.6.0 (2026-09-25)
+------------------
+- New: one switch per kind of automated station ("Automated stations" in F1, "Stations" in the
+  Mods menu). After loading a save, every kind of station the mod automates there is listed (ovens,
+  compost heaps, wells, workbenches with a zombie worker and so on). Turn one off and the mod leaves
+  that kind of station completely alone. All on by default.
+
+1.5.0 (2026-09-25)
+------------------
+- New option "Pick recipes for zombie workbenches" (off by default): an idle zombie picks a recipe
+  it can make (right tool and enough mastery) from the ingredients in nearby storages, crafts it
+  once and then picks again. Recipes no other station in the area is making come first,
+  then the one whose result you have the least of.
+
+1.4.0 (2026-09-24)
+------------------
+- New option "Zombie ingredients from chests" (on by default): zombie workers take the
+  ingredients they need straight from the storages within the search radius, so no other zombie has
+  to bring them anymore. Ingredients another zombie is already bringing are left to it; if there
+  is not enough nearby, the zombie waits as usual.
+
+1.3.0 (2026-09-24)
+------------------
+- "Pick recipes from nearby chests" now crafts one at a time and checks all unlocked recipes again
+  after each one: stations prefer recipes that no other station in the area is making right now,
+  then the one whose result you have the least of. Several ovens share the work and your stock
+  stays balanced. The next recipe is picked right after the finished item has been collected.
+- The description of "Station speed" now says clearly that tables you work at yourself
+  (workbenches, autopsy and embalming table) are not affected. Tireless Keeper can speed up your
+  own work there.
+
+1.2.0 (2026-09-24)
+------------------
+- Translations: the settings (F1 menu and GK2 Mod Framework menu) and the mod description can now
+  be translated with language files of the GK2 Mod Framework (0.1.8 or newer). English and German
+  are included.
+
+1.1.0 (2026-09-24)
+------------------
+- New option "Collect research points" (on by default): the research points of stations the mod
+  collects for you fly straight to you, like when you sleep, instead of dropping next to the
+  station.
+- New option "Empty wells into chests" (on by default): the water of upgraded wells is moved into
+  a nearby chest, so the well never stops producing.
+- Fixed: finished items could end up in the upgraded well (or other objects with storage that are
+  not chests) when it was empty and there was no chest nearby. Only real chests are used now.
+- Checked against the game update 1.0.0.5: no other changes needed.
+
+1.0.0 (2026-09-24)
+------------------
+Initial release:
+- Zombie workbenches: finished items go straight into a nearby chest, the zombie keeps working.
+- Auto-crafting stations (e.g. ovens): finished items are collected into a nearby chest and the
+  station keeps running, even while you are somewhere else. Research points drop next to the
+  station.
+- Refuel from chests: fuel storages make the fuel a waiting station needs from materials in your
+  chests.
+- Repeat recipes: recipes queued with count 1 at ovens and zombie workbenches become 999.
+- Pick recipes from nearby chests (off by default): idle ovens queue a recipe themselves when its
+  ingredients are in a nearby chest.
+- Station speed: ovens, distillers and the like work up to 10x faster.
+- Chest search radius and optional "Drop on the ground if no chest".
+- Settings in game via F1 (ConfigurationManager) or the GK2 Mod Framework menu.

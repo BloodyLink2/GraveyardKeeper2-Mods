@@ -1,0 +1,27 @@
+TIRELESS KEEPER: Changelog
+==========================
+
+1.2.0 (2026-09-24)
+------------------
+- New option "Your work speed at tables" (1.0 = normal, up to 10x): more progress per hit when you
+  work at a table yourself, such as workbenches, the autopsy and embalming table or the study
+  table. Every hit still costs energy as usual.
+
+1.1.0 (2026-09-24)
+------------------
+- Translations: the settings (F1 menu and GK2 Mod Framework menu) and the mod description can now
+  be translated with language files of the GK2 Mod Framework (0.1.8 or newer). English and German
+  are included.
+- Checked against the game update 1.0.0.5: no changes needed.
+
+1.0.0 (2026-09-23)
+------------------
+Initial release:
+- Health regenerates automatically (adjustable, also during combat).
+- Energy regenerates automatically (adjustable).
+- Insanity fades automatically (adjustable).
+- Sleep deprivation builds up slower (adjustable, 0 = never).
+- Optional infinite health and infinite energy.
+- Sleep with full energy: the bed no longer refuses when your energy bar is full, so you can always
+  save.
+- Settings in game via F1 (ConfigurationManager) or the GK2 Mod Framework menu.

@@ -1,0 +1,12 @@
+BIGGER STORAGE: Changelog
+=========================
+
+1.0.0 (2026-09-24)
+------------------
+Initial release:
+- Extra chest slots: every chest gets up to 100 more slots, also the ones you already built.
+- Stack size: up to 300 items per slot in all inventories (off by default).
+- Prepare for uninstall: resets chests and stacks to normal before you remove the mod and tells you
+  which chests are still too full.
+- Settings in game via F1 (ConfigurationManager) or the GK2 Mod Framework menu, translatable
+  (English and German included).

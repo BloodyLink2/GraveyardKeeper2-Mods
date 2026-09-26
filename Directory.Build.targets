@@ -1,0 +1,12 @@
+<Project>
+  <!-- Wird von allen Projekten automatisch geladen. Klare Meldung statt vieler "Could not resolve this reference"-
+       Warnungen, wenn der Spielordner nicht stimmt. -->
+  <Target Name="CheckGameDir" BeforeTargets="ResolveAssemblyReferences">
+    <Error Condition="!Exists('$(GameManagedDir)\Assembly-CSharp.dll')"
+           Text="Graveyard Keeper 2 not found in &quot;$(GameDir)&quot;. Copy LocalPaths.props.example to LocalPaths.props and set GameDir to your game folder, or build with -p:GameDir=&quot;...&quot;." />
+    <Error Condition="!Exists('$(BepInExDir)\core\BepInEx.dll')"
+           Text="BepInEx not found in &quot;$(BepInExDir)&quot;. Install BepInEx 5.4.23.5 (x64) into the game folder." />
+    <Error Condition="!Exists('$(FrameworkDll)')"
+           Text="GK2.Framework.dll not found at &quot;$(FrameworkDll)&quot;. Install the GK2 Mod Framework or set FrameworkDll." />
+  </Target>
+</Project>

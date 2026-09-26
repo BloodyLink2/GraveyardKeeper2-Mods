@@ -1,0 +1,11 @@
+{
+  "mod.description": "Makes zombies work faster at workbenches and in the garden (up to 10x) and optionally gives them extra mastery.",
+  "Enabled.name": "Mod enabled",
+  "Enabled.description": "Turns the mod on or off (takes effect immediately).",
+  "SpeedMultiplier.name": "Work speed",
+  "SpeedMultiplier.description": "How fast zombies work at workbenches and in the garden (1.0 = normal, up to 10x).",
+  "SpeedMultiplier.hint": "How fast zombies work at workbenches and in the garden (1.0 = normal, max. 10.0).",
+  "MasteryBonus.name": "Mastery bonus (levels)",
+  "MasteryBonus.description": "Extra mastery levels for working zombies (0 = normal). This is not a multiplier. Higher mastery lets them make recipes above their level and gives more progress per hit (mastery ÷ recipe level, the game allows at most 3 cells per hit).",
+  "MasteryBonus.hint": "Extra mastery levels for working zombies (0 = normal). Max. 3 cells per hit."
+}

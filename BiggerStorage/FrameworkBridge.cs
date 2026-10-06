@@ -59,7 +59,7 @@ namespace BiggerStorage
             "BloodyLink2",
             Plugin.Version,
             Translations.Get("mod.description",
-                "More slots for every chest and, if you like, bigger stacks in all inventories."),
+                "More slots for every chest and for the wood, stone and marble storages, and bigger stacks if you like."),
             supportsRuntimeToggle: true,
             requiresKnownBuild: false);
 
@@ -74,16 +74,27 @@ namespace BiggerStorage
                 Translations.Get("ExtraSlots.hint", "Slots every chest gets on top of its normal size (0 = normal)."),
                 step: 1, order: 0);
 
+            context.Settings.AddIntSlider("Chests", "ExtraStorageSlots", 10, 0, Plugin.ExtraSlotsMax,
+                Translations.Get("ExtraStorageSlots.name", "Extra slots for wood, stone and marble"),
+                Translations.Get("ExtraStorageSlots.hint",
+                    "Slots the storages for logs, stone and marble blocks get on top of their normal size."),
+                step: 1, order: 1);
+
+            context.Settings.AddToggle("Chests", "ShowFillLevel", true,
+                Translations.Get("ShowFillLevel.name", "Show fill level"),
+                Translations.Get("ShowFillLevel.hint", "Bubble above wood, stone and marble storages, e.g. 12/20."),
+                order: 2);
+
             context.Settings.AddIntSlider("Stacks", "StackSize", 0, 0, Plugin.StackSizeMax,
                 Translations.Get("StackSize.name", "Stack size"),
                 Translations.Get("StackSize.hint", "Items per slot in all inventories (0 = normal, up to 300)."),
-                step: Plugin.StackSizeStep, order: 1);
+                step: Plugin.StackSizeStep, order: 3);
 
             context.Settings.AddToggle("Uninstall", "PrepareUninstall", false,
                 Translations.Get("PrepareUninstall.name", "Prepare for uninstall"),
                 Translations.Get("PrepareUninstall.hint",
-                    "Resets all chests and stacks to normal so you can remove the mod safely."),
-                order: 2);
+                    "Resets all chests, storages and stacks to normal so you can remove the mod safely."),
+                order: 4);
         }
 
         public override void OnEnable()

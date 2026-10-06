@@ -36,9 +36,10 @@ namespace BiggerStorage
 
             string message = tooFull > 0
                 ? string.Format(Translations.Get("uninstall.pending",
-                    "Bigger Storage: {0} chest(s) still hold more items than their normal size. Take some out."), tooFull)
+                    "Bigger Storage: {0} chest(s) or storage(s) still hold more items than their normal size. " +
+                    "Take some out."), tooFull)
                 : Translations.Get("uninstall.done",
-                    "Bigger Storage: all chests are back to their normal size. Sleep once so the game saves, then you can " +
+                    "Bigger Storage: all chests and storages are back to their normal size. Sleep once so the game saves, then " +
                     "uninstall.");
             Plugin.Log(message);
 

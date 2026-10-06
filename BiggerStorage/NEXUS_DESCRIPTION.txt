@@ -2,15 +2,20 @@
 Bigger Storage
 
 ===== BRIEF OVERVIEW (max. 350 characters) =====
-More room for your stuff: every chest gets up to 100 extra slots (also the ones you already built) and, if you like, items stack up to 300 per slot in all inventories. Adjustable in game via F1 or the GK2 Mod Framework menu, with a safe way back when you want to remove it.
+More room for your stuff: every chest and every storage for logs, stone and marble gets up to 100 extra slots (also the ones you already built), and items can stack up to 300 per slot. Adjustable in game via F1 or the GK2 Mod Framework menu, with a safe way back when you want to remove it.
 
 ===== SHORT DESCRIPTION =====
-Up to 100 extra slots for every chest and optional stacks of up to 300. Configurable in game.
+Up to 100 extra slots for every chest and for wood, stone and marble storages, optional stacks of up to 300.
 
 ===== FILE DESCRIPTION =====
-Initial release. Copy the BepInEx folder into your Graveyard Keeper 2 game folder. Requires BepInEx 5.4.23.5 (x64).
+New options: extra slots for the wood, stone and marble storages (e.g. the wood storage at the sawmill) and a bubble that shows how full they are. Copy the BepInEx folder into your Graveyard Keeper 2 game folder (overwrite the old version). Requires BepInEx 5.4.23.5 (x64).
 
 ===== CHANGELOG =====
+1.1.0
+- New option "Extra slots for wood, stone and marble" (0 to 100, default 10): the storages you put logs, stone blocks and marble blocks into (e.g. the wood storage at the sawmill) get more slots too, also the ones you already built. "Prepare for uninstall" resets them as well.
+- New option "Show fill level" (on by default): a small bubble above these storages shows how full they are, e.g. 12/20.
+- Checked against the game update 1.0.0.7 and GK2 Mod Framework 0.1.14: no changes needed. With 0.1.12 or newer you can also change the settings in game via the Mods button in the pause menu.
+- Reworded some texts.
 1.0.0
 - Initial release.
 
@@ -26,8 +31,10 @@ Chests full again? Bigger Storage gives every chest more slots and, if you want,
 [size=4][b]Features[/b][/size]
 [list]
 [*][b]Extra chest slots[/b]: 0 to 100 (default 10). Every chest gets this many slots on top of its normal size, also the ones you already built. Conveyor chests, fuel storages, wells and other objects with storage are left alone.
+[*][b]Extra slots for wood, stone and marble[/b]: 0 to 100 (default 10). The storages you put logs, stone blocks and marble blocks into (e.g. the wood storage at the sawmill) get this many slots on top of their normal size, also the ones you already built. Conveyor storages are left alone.
+[*][b]Show fill level[/b]: a small bubble above these storages shows how full they are, e.g. 12/20, like the one above fuel storages. (On by default.)
 [*][b]Stack size[/b]: 0 to 300 in steps of 10 (default 0 = normal). How many items fit on one slot in every inventory: yours, chests and stations. Items that already stack higher keep their size, and items that do not stack (like tools) stay single.
-[*][b]Prepare for uninstall[/b]: turn it on before you remove the mod. Chests go back to their normal size and stacks to normal. A chest that is still too full keeps the slots it needs and shrinks as soon as you take items out, and a message on screen tells you how many chests are left and when you are done. (Off by default.)
+[*][b]Prepare for uninstall[/b]: turn it on before you remove the mod. Chests and storages go back to their normal size and stacks to normal. One that is still too full keeps the slots it needs and shrinks as soon as you take items out, and a message on screen tells you how many are left and when you are done. (Off by default.)
 [/list]
 All settings apply instantly, no restart needed.
 
@@ -53,23 +60,26 @@ The game uses one stack size per item everywhere: when you put items in, merge, 
 [*]Extract the archive and copy the [b]BepInEx[/b] folder into your Graveyard Keeper 2 game folder.
 [*]The mod is now located at BepInEx/plugins/BiggerStorage/BiggerStorage.dll
 [/list]
-To check that it works, look for "Bigger Storage 1.0.0 loaded" in BepInEx/LogOutput.log. After loading a save it also tells you how many chests were resized.
+To check that it works, look for "Bigger Storage 1.1.0 loaded" in BepInEx/LogOutput.log. After loading a save it also tells you how many chests and storages were resized.
 
 [size=4][b]Translations[/b][/size]
 With the GK2 Mod Framework (0.1.8 or newer), the settings and the mod description appear in your game language. English and German are included. To add your language, copy [i]BepInEx/plugins/GK2.Framework/Localization/biggerstorage/en.json[/i] to a file named after your language code (e.g. [i]ko.json[/i]) in the same folder and translate the texts on the right side. Section headings in the Mods menu stay in English. Restart the game to see changes. Send me your file and I will gladly include it in the next version!
 
 [size=4][b]Uninstall[/b][/size]
-The chest size is stored in your save game, like everything else about a chest. So before you remove the mod, turn on [b]Prepare for uninstall[/b], take items out of the chests the message tells you about until it says all chests are back to normal, and sleep once so the game saves. Then delete the folders BepInEx/plugins/BiggerStorage and BepInEx/plugins/GK2.Framework/Localization/biggerstorage. Bigger stacks you already have stay as they are. The game handles them fine without the mod.
+The size of chests and storages is stored in your save game, like everything else about them. So before you remove the mod, turn on [b]Prepare for uninstall[/b], take items out of the chests and storages the message tells you about until it says all are back to normal, and sleep once so the game saves. Then delete the folders BepInEx/plugins/BiggerStorage and BepInEx/plugins/GK2.Framework/Localization/biggerstorage. Bigger stacks you already have stay as they are. The game handles them fine without the mod.
 
 [size=4][b]Good to know[/b][/size]
 [list]
-[*]Lowering "Extra chest slots" (or turning the mod off) shrinks chests again, but never below the slots in use, so nothing gets lost.
+[*]Lowering the extra slots (or turning the mod off) shrinks chests and storages again, but never below the slots in use, so nothing gets lost.
 [*]Lowering the stack size keeps bigger stacks you already have; they just do not grow anymore.
 [*]Pairs well with [url=https://www.nexusmods.com/graveyardkeeper2/mods/89][b]Graveyard Automation[/b][/url]: more room in the chests next to your stations means they run longer on their own.
 [/list]
 
 [size=4][b]Compatibility[/b][/size]
 Works with or without the GK2 Mod Framework. Other mods that also change chest sizes or stack sizes may conflict. Mods that change how many big items (logs, stones) you can carry over your head are not affected.
+
+[size=4][b]Source code[/b][/size]
+The source code of this mod is on [url=https://github.com/BloodyLink2/GraveyardKeeper2-Mods]GitHub[/url] under the MIT license, together with my other mods. You can check what it does, learn from it or build it yourself.
 
 [size=4][b]Other Mods[/b][/size]
 [list]

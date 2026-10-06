@@ -1,16 +1,22 @@
 {
-  "mod.description": "More slots for every chest and, if you like, bigger stacks in all inventories.",
+  "mod.description": "More slots for every chest and for the wood, stone and marble storages, and bigger stacks if you like.",
   "Enabled.name": "Mod enabled",
-  "Enabled.description": "Turns the mod on or off (takes effect immediately). Off = chests shrink back to their normal size as far as their contents allow, and stack sizes are back to normal.",
+  "Enabled.description": "Turns the mod on or off (takes effect immediately). Off = chests and storages shrink back to their normal size as far as their contents allow, and stack sizes are back to normal.",
   "ExtraSlots.name": "Extra chest slots",
   "ExtraSlots.description": "How many slots every chest gets on top of its normal size (0 = normal, up to 100). Applies to all chests you can open, also the ones you already built. Lowering it shrinks chests again, but never below the slots in use, so nothing gets lost.",
   "ExtraSlots.hint": "Slots every chest gets on top of its normal size (0 = normal).",
+  "ExtraStorageSlots.name": "Extra slots for wood, stone and marble",
+  "ExtraStorageSlots.description": "How many slots the storages for logs, stone blocks and marble blocks (e.g. the wood storage at the sawmill) get on top of their normal size (0 = normal, up to 100), also the ones you already built. Lowering it shrinks them again, but never below the slots in use.",
+  "ExtraStorageSlots.hint": "Slots the storages for logs, stone and marble blocks get on top of their normal size.",
+  "ShowFillLevel.name": "Show fill level",
+  "ShowFillLevel.description": "Shows how full the storages for logs, stone blocks and marble blocks are, e.g. 12/20, in a small bubble above them, like the one above fuel storages.",
+  "ShowFillLevel.hint": "Bubble above wood, stone and marble storages, e.g. 12/20.",
   "StackSize.name": "Stack size",
   "StackSize.description": "How many items fit on one slot in every inventory: yours, chests and stations (0 = normal, up to 300, in steps of 10). Items that already stack higher keep their size, items that do not stack (like tools) stay single. Lowering it keeps bigger stacks you already have; they just do not grow anymore.",
   "StackSize.hint": "Items per slot in all inventories (0 = normal, up to 300).",
   "PrepareUninstall.name": "Prepare for uninstall",
-  "PrepareUninstall.description": "Turn this on before you remove the mod: chests go back to their normal size and stack sizes to normal, whatever else is set. A chest that still holds more items than its normal size keeps the extra slots it needs and shrinks as soon as you take items out. A message tells you how many chests are still too full. When all chests are back to normal, sleep once so the game saves, then uninstall. Bigger stacks you already have stay as they are; the game handles them fine without the mod.",
-  "PrepareUninstall.hint": "Resets all chests and stacks to normal so you can remove the mod safely.",
-  "uninstall.done": "Bigger Storage: all chests are back to their normal size. Sleep once so the game saves, then you can uninstall.",
-  "uninstall.pending": "Bigger Storage: {0} chest(s) still hold more items than their normal size. Take some out."
+  "PrepareUninstall.description": "Turn this on before you remove the mod: chests and storages go back to their normal size and stack sizes to normal, whatever else is set. One that still holds more items than its normal size keeps the extra slots it needs and shrinks as soon as you take items out. A message tells you how many are still too full. When all are back to normal, sleep once so the game saves, then uninstall. Bigger stacks you already have stay as they are; the game handles them fine without the mod.",
+  "PrepareUninstall.hint": "Resets all chests, storages and stacks to normal so you can remove the mod safely.",
+  "uninstall.done": "Bigger Storage: all chests and storages are back to their normal size. Sleep once so the game saves, then uninstall.",
+  "uninstall.pending": "Bigger Storage: {0} chest(s) or storage(s) still hold more items than their normal size. Take some out."
 }

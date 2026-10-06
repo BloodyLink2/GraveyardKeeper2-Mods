@@ -1,4 +1,4 @@
-BIGGER STORAGE 1.0.0 for Graveyard Keeper 2 (BepInEx mod)
+BIGGER STORAGE 1.1.0 for Graveyard Keeper 2 (BepInEx mod)
 =========================================================
 
 What the mod does
@@ -6,27 +6,32 @@ What the mod does
 - Extra chest slots (0 to 100, default 10): every chest gets this many slots on top of its normal
   size. This applies to all chests you can open (also the ones you already built), but not to
   conveyor chests, fuel storages, wells and other objects with storage.
+- Extra slots for wood, stone and marble (0 to 100, default 10): the storages you put logs, stone
+  blocks and marble blocks into (e.g. the wood storage at the sawmill) get this many slots on top
+  of their normal size, also the ones you already built. Conveyor storages are left alone.
+- Show fill level (toggle, default on): a small bubble above these storages shows how full they
+  are, e.g. 12/20, like the one above fuel storages.
 - Stack size (0 to 300 in steps of 10, default 0 = normal): how many items fit on one slot, in
   every inventory: yours, chests and stations. Items that already stack higher keep their size,
   items that do not stack (like tools) stay single. A stack size only for chests is not possible:
   the game uses the same stack size everywhere, so a chest-only rule would risk losing or
   duplicating items when you move them around.
-- Prepare for uninstall (toggle, default off): turn this on before you remove the mod. Chests go
-  back to their normal size and stack sizes to normal, whatever else is set. A chest that still
-  holds more items than its normal size keeps the slots it needs and shrinks as soon as you take
-  items out; a message on screen tells you how many chests are still too full, and when all of
-  them are back to normal.
+- Prepare for uninstall (toggle, default off): turn this on before you remove the mod. Chests and
+  storages go back to their normal size and stack sizes to normal, whatever else is set. One that
+  still holds more items than its normal size keeps the slots it needs and shrinks as soon as you
+  take items out; a message on screen tells you how many are still too full, and when all of them
+  are back to normal.
 - All changes take effect immediately, no restart needed.
 
 Good to know
 ------------
-- The chest size is stored in your save game, like everything else about the chest. Lowering
-  "Extra chest slots" (or turning the mod off) shrinks chests again, but never below the slots in
-  use, so nothing gets lost.
+- The size of chests and storages is stored in your save game, like everything else about them.
+  Lowering the extra slots (or turning the mod off) shrinks them again, but never below the slots
+  in use, so nothing gets lost.
 - Lowering the stack size (or turning the mod off) keeps bigger stacks you already have; they just
   do not grow anymore.
-- To remove the mod: turn on "Prepare for uninstall", take items out of the chests the message
-  tells you about, sleep once so the game saves, then uninstall. Bigger stacks you already have
+- To remove the mod: turn on "Prepare for uninstall", take items out of the chests and storages
+  the message tells you about, sleep once so the game saves, then uninstall. Bigger stacks you already have
   stay as they are; the game handles them fine without the mod.
 
 Requirements
@@ -52,7 +57,7 @@ Settings
 Check
 -----
 BepInEx/LogOutput.log should contain:
-  "Bigger Storage 1.0.0 loaded (framework: yes/no, ...)"
+  "Bigger Storage 1.1.0 loaded (framework: yes/no, ...)"
 After loading a save it shows how many chests were resized, e.g. "Resized 12 chest(s) (extra slots: +10)."
 
 Translations

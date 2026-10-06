@@ -1,4 +1,7 @@
+using System.Collections.Generic;
 using HarmonyLib;
+using LazyBearTechnology;
+using TMPro;
 
 namespace BiggerStorage
 {
@@ -24,5 +27,35 @@ namespace BiggerStorage
         {
             if (__result < 0) __result = 0;
         }
+    }
+
+    /// <summary>Füllstand-Blase: Wgo.InitDataBindings verbindet eine Objekt-Ansicht mit ihren Daten.</summary>
+    [HarmonyPatch(typeof(Wgo), "InitDataBindings")]
+    internal static class StorageViewInitPatch
+    {
+        private static void Postfix(Wgo __instance) => StorageBubble.Attach(__instance);
+    }
+
+    /// <summary>Füllstand-Blase: Wgo.DeInit löst die Ansicht wieder von ihren Daten.</summary>
+    [HarmonyPatch(typeof(Wgo), "DeInit")]
+    internal static class StorageViewDeInitPatch
+    {
+        private static void Prefix(Wgo __instance) => StorageBubble.Detach(__instance);
+    }
+
+    /// <summary>Füllstand-Blase: Wgo.GetWidgetData liefert alles, was über dem Objekt angezeigt wird.</summary>
+    [HarmonyPatch(typeof(Wgo), nameof(Wgo.GetWidgetData))]
+    internal static class StorageBubblePatch
+    {
+        private static void Postfix(Wgo __instance, List<LazyWidgetDataBase> __result) =>
+            StorageBubble.AddWidget(__instance, __result);
+    }
+
+    /// <summary>Füllstand-Blase: UIQualityTooltipWidget.Draw zeichnet Icon und Zahl, bei uns kommt das Item-Icon dazu.</summary>
+    [HarmonyPatch(typeof(UIQualityTooltipWidget), nameof(UIQualityTooltipWidget.Draw))]
+    internal static class StorageBubbleIconPatch
+    {
+        private static void Postfix(UIQualityTooltipWidgetData data, TextMeshProUGUI ___iconLabel) =>
+            StorageBubble.DrawIcon(data, ___iconLabel);
     }
 }

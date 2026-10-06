@@ -1,6 +1,17 @@
 BIGGER STORAGE: Changelog
 =========================
 
+1.1.0 (2026-09-27)
+------------------
+- New option "Extra slots for wood, stone and marble" (0 to 100, default 10): the storages you
+  put logs, stone blocks and marble blocks into (e.g. the wood storage at the sawmill) get more
+  slots too, also the ones you already built. "Prepare for uninstall" resets them as well.
+- New option "Show fill level" (on by default): a small bubble above these storages shows how full
+  they are, e.g. 12/20, like the one above fuel storages.
+- Checked against the game update 1.0.0.7 and GK2 Mod Framework 0.1.14: no changes needed. With
+  0.1.12 or newer you can also change the settings in game via the Mods button in the pause menu.
+- Reworded some texts.
+
 1.0.0 (2026-09-24)
 ------------------
 Initial release:

@@ -13,7 +13,7 @@ namespace GraveyardAutomation
     {
         public const string Guid = "de.gk2mods.graveyardautomation";
         public const string Name = "Graveyard Automation";
-        public const string Version = "1.7.0";
+        public const string Version = "1.8.1";
 
         internal const string FrameworkGuid = "ru.superman4eg.gk2.framework";
         internal const string ModId = "graveyardautomation";
@@ -30,6 +30,7 @@ namespace GraveyardAutomation
         internal static ConfigEntry<bool> Enabled;
         internal static ConfigEntry<bool> ZombieWorkbenches;
         internal static ConfigEntry<bool> ZombieIngredients;
+        internal static ConfigEntry<bool> ZombieIngredientsAllAreas;
         internal static ConfigEntry<bool> AutoCrafters;
         internal static ConfigEntry<bool> CollectResearchPoints;
         internal static ConfigEntry<bool> EmptyWells;
@@ -55,14 +56,14 @@ namespace GraveyardAutomation
             Enabled = Config.Bind("Framework", "Enabled", true, Describe(
                 Translations.Get("Enabled.name", "Mod enabled"),
                 Translations.Get("Enabled.description", "Turns the mod on or off (takes effect immediately)."),
-                13));
+                14));
 
             ZombieWorkbenches = Config.Bind("Delivery", "ZombieWorkbenches", true, Describe(
                 Translations.Get("ZombieWorkbenches.name", "Zombie workbenches"),
                 Translations.Get("ZombieWorkbenches.description",
                     "Items finished by zombie workers go straight into a chest next to the workbench instead of " +
                     "waiting for you to pick them up, so the zombie keeps working right away."),
-                12));
+                13));
 
             ZombieIngredients = Config.Bind("Delivery", "ZombieIngredients", true, Describe(
                 Translations.Get("ZombieIngredients.name", "Zombie ingredients from chests"),
@@ -70,6 +71,15 @@ namespace GraveyardAutomation
                     "Zombie workers take the ingredients they need straight from the storages within the search " +
                     "radius, so no other zombie has to bring them. Ingredients another zombie is already bringing " +
                     "are left to it. If there is not enough nearby, the zombie waits as usual."),
+                12));
+
+            ZombieIngredientsAllAreas = Config.Bind("Delivery", "ZombieIngredientsAllAreas", false, Describe(
+                Translations.Get("ZombieIngredientsAllAreas.name", "Zombie ingredients from all areas"),
+                Translations.Get("ZombieIngredientsAllAreas.description",
+                    "Addition to \"Zombie ingredients from chests\": if the storages within the search radius do not " +
+                    "hold enough of an ingredient, zombie workers also take it from the other storages in their area " +
+                    "and from the chests in all other areas, so nothing has to be carried between areas. Storages " +
+                    "nearby are used first."),
                 11));
 
             AutoCrafters = Config.Bind("Delivery", "AutoCrafters", true, Describe(
@@ -193,6 +203,7 @@ namespace GraveyardAutomation
             Logger.LogInfo($"{Name} {Version} loaded (framework: {(FrameworkMode ? "yes" : "no")}, " +
                            $"zombie workbenches: {(ZombieWorkbenches.Value ? "on" : "off")}, " +
                            $"zombie ingredients: {(ZombieIngredients.Value ? "on" : "off")}, " +
+                           $"from all areas: {(ZombieIngredientsAllAreas.Value ? "on" : "off")}, " +
                            $"auto-crafting stations: {(AutoCrafters.Value ? "on" : "off")}, " +
                            $"collect research points: {(CollectResearchPoints.Value ? "on" : "off")}, " +
                            $"empty wells: {(EmptyWells.Value ? "on" : "off")}, " +

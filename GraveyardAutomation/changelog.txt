@@ -1,6 +1,19 @@
 GRAVEYARD AUTOMATION: Changelog
 ===============================
 
+1.8.1 (2026-10-05)
+------------------
+- Russian translation added, made by Alex5Not (thank you!). With the GK2 Mod Framework (0.1.8 or
+  newer), the settings and the mod description now also appear in Russian.
+
+1.8.0 (2026-10-05)
+------------------
+- New option "Zombie ingredients from all areas" (off by default): if the storages within the
+  search radius do not hold enough of an ingredient, zombie workers also take it from the other
+  storages in their area and from the chests in all other areas, so nothing has to be carried
+  between areas. Storages nearby are used first.
+- Checked against the game update 1.008 and GK2 Mod Framework 0.1.17: no changes needed.
+
 1.7.0 (2026-09-26)
 ------------------
 - New option "Harvest beehives" (on by default): full beehives are harvested automatically, as if

@@ -5,7 +5,7 @@
     <RootNamespace>GraveyardAutomation</RootNamespace>
     <LangVersion>9.0</LangVersion>
     <Nullable>disable</Nullable>
-    <Version>1.7.0</Version>
+    <Version>1.8.1</Version>
     <!-- Mod-Id beim GK2 Mod Framework (Plugin.ModId) – Ordnername der Sprachdateien. -->
     <FrameworkModId>graveyardautomation</FrameworkModId>
     <Authors>BloodyLink2</Authors>

@@ -1,4 +1,4 @@
-GRAVEYARD AUTOMATION 1.7.0 for Graveyard Keeper 2 (BepInEx mod)
+GRAVEYARD AUTOMATION 1.8.1 for Graveyard Keeper 2 (BepInEx mod)
 ===============================================================
 
 What the mod does
@@ -14,6 +14,11 @@ you to pick them up.
   ingredients straight from the storages within the search radius, so zombie workbenches run
   without a second zombie. Ingredients another zombie is already bringing are left to it; if there
   is not enough nearby, the zombie waits as usual.
+- Zombie ingredients from all areas (toggle, default off): an addition to the option above. If the
+  storages within the search radius do not hold enough of an ingredient, the zombie also takes it
+  from the other storages in its area and from the chests in all other areas, so nothing has to be
+  carried between areas. Storages nearby are used first. From other areas only real chests are
+  used, not wells or the storages for logs, stone and marble.
 - Auto-crafting stations (toggle, default on): stations that craft on their own (e.g. ovens) keep
   their finished items inside until you collect them, and stop until then. With this mod they are
   collected automatically, the items go into a nearby chest and the station keeps running, even
@@ -105,7 +110,7 @@ Settings
 Check
 -----
 BepInEx/LogOutput.log should contain:
-  "Graveyard Automation 1.7.0 loaded (framework: yes/no, ...)"
+  "Graveyard Automation 1.8.1 loaded (framework: yes/no, ...)"
 The first time a station delivers into a chest, the log shows which chest it uses and how far
 away it is, e.g. "workbench_1 delivers into chest_1 (2.1 away)".
 If a finished station cannot deliver, the log says why (once per station), e.g.
@@ -115,10 +120,11 @@ Then move the chest closer or raise the search radius.
 Translations
 ------------
 With GK2 Mod Framework 0.1.8 or newer, the settings (F1 and the "Mods" menu) and the mod
-description appear in your game language. Included: English and German.
+description appear in your game language. Included: English, German and Russian (Russian
+translation by Alex5Not).
 To add a language, copy
   BepInEx/plugins/GK2.Framework/Localization/graveyardautomation/en.json
-to a file named after the game's language code (e.g. ko.json, ru.json, fr.json) in the same
+to a file named after the game's language code (e.g. ko.json, fr.json, es.json) in the same
 folder and translate the texts on the right side. Section headings in the "Mods" menu stay in
 English. Restart the game to see changes. Feel free to send me your translation and I will
 gladly include it in the next version.

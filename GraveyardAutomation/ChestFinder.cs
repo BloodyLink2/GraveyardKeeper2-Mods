@@ -12,6 +12,8 @@ namespace GraveyardAutomation
     /// </summary>
     internal static class ChestFinder
     {
+        private static readonly HashSet<WgoData> seen = new HashSet<WgoData>();
+
         internal static WgoData Find(WgoData station, Item item) =>
             Find(station, inventory => inventory.CanAddItemToInventory(item), item.id);
 
@@ -74,6 +76,50 @@ namespace GraveyardAutomation
                 result.Add(chest);
             }
             result.Sort((a, b) => Distance(station, a).CompareTo(Distance(station, b)));
+        }
+
+        /// <summary>
+        /// "Zombie ingredients from all areas": erst die Lager im Suchradius (<paramref name="nearby"/>, schon sortiert),
+        /// dann die übrigen Lager im Gebiet der Station (nächste zuerst), dann die Truhen aller anderen Gebiete. Im eigenen
+        /// Gebiet zählt wie beim Caretaker jedes Lager. Aus fremden Gebieten nehmen wir nur aus echten Truhen, nicht aus
+        /// Brunnen, Material- oder Sonderlagern, deren Vorrat dort gebraucht wird.
+        /// </summary>
+        internal static void CollectEverywhere(WgoData station, List<WgoData> nearby, List<WgoData> result)
+        {
+            result.Clear();
+            result.AddRange(nearby);
+            seen.Clear();
+            foreach (WgoData chest in nearby) seen.Add(chest);
+
+            WorldZoneData ownZone = station.WorldZoneData;
+            int ownStart = result.Count;
+            if (ownZone?.MultiInventoryWgoDatas != null)
+            {
+                foreach (WgoData chest in ownZone.MultiInventoryWgoDatas)
+                {
+                    if (chest == null || chest == station || chest.Inventory == null || chest.Definition == null ||
+                        chest.Definition.conveyorType != ConveyorElementType.None) continue;
+                    if (seen.Add(chest)) result.Add(chest);
+                }
+                result.Sort(ownStart, result.Count - ownStart,
+                    Comparer<WgoData>.Create((a, b) => Distance(station, a).CompareTo(Distance(station, b))));
+            }
+
+            WorldData world = MainGame.Instance?.GameSave?.worldData;
+            if (world?.gameSceneDataList == null) return;
+            foreach (GameSceneData scene in world.gameSceneDataList)
+            {
+                if (scene?.worldZones == null) continue;
+                foreach (WorldZoneData zone in scene.worldZones)
+                {
+                    if (zone == null || zone == ownZone || zone.MultiInventoryWgoDatas == null) continue;
+                    foreach (WgoData chest in zone.MultiInventoryWgoDatas)
+                    {
+                        if (chest == null || chest == station || chest.Inventory?.Data == null || !IsStorageChest(chest)) continue;
+                        if (seen.Add(chest)) result.Add(chest);
+                    }
+                }
+            }
         }
 
         /// <summary>Für die Diagnose: Abstand zur nächsten Truhe im Gebiet, egal ob mit Platz; -1 = keine Truhe.</summary>

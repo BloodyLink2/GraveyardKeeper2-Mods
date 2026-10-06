@@ -8,9 +8,14 @@ Automate your crafting: finished items go straight into a chest next to the stat
 Finished items go straight into a nearby chest, ovens run on their own and refuel themselves. Configurable in game.
 
 ===== FILE DESCRIPTION =====
-New option "Harvest beehives": full beehives are harvested into a nearby chest automatically. Copy the BepInEx folder into your Graveyard Keeper 2 game folder (overwrite the old version). Requires BepInEx 5.4.23.5 (x64).
+Adds a Russian translation by Alex5Not. No other changes since 1.8.0. Copy the BepInEx folder into your Graveyard Keeper 2 game folder (overwrite the old version). Requires BepInEx 5.4.23.5 (x64).
 
 ===== CHANGELOG =====
+1.8.1
+- Russian translation added, made by Alex5Not (thank you!). With the GK2 Mod Framework (0.1.8 or newer), the settings and the mod description now also appear in Russian.
+1.8.0
+- New option "Zombie ingredients from all areas" (off by default): if the storages within the search radius do not hold enough of an ingredient, zombie workers also take it from the other storages in their area and from the chests in all other areas, so nothing has to be carried between areas. Storages nearby are used first.
+- Checked against the game update 1.008 and GK2 Mod Framework 0.1.17: no changes needed.
 1.7.0
 - New option "Harvest beehives" (on by default): full beehives are harvested automatically, as if you did it yourself. The honey and beeswax go into a chest within the search radius, and the hive starts filling up again. Beehives also get their own switch under "Automated stations". Wild honey nests are left alone.
 - Checked against the game patch 1.006 and GK2 Mod Framework 0.1.12: no changes needed. With 0.1.12 you can also change the settings in game via the Mods button in the pause menu.
@@ -48,6 +53,7 @@ Tired of running from oven to oven just to pick up finished items? In vanilla Gr
 [list]
 [*][b]Zombie workbenches[/b]: items finished by zombie workers go straight into a chest next to the workbench. The zombie keeps working right away instead of waiting for you. (On by default.)
 [*][b]Zombie ingredients from chests[/b]: zombie workers take the ingredients they need straight from the storages next to their workbench, so no second zombie has to bring them. Ingredients another zombie is already bringing are left to it. (On by default.)
+[*][b]Zombie ingredients from all areas[/b]: an addition to the option above. If the storages within the search radius do not hold enough of an ingredient, the zombie also takes it from the other storages in its area and from the chests in all other areas, so nothing has to be carried between areas. Storages nearby are used first. (Off by default.)
 [*][b]Auto-crafting stations[/b]: ovens, distillers and other stations that craft on their own are collected automatically. The items go into a nearby chest and the station starts its next craft, even while you are somewhere else. (On by default.)
 [*][b]Collect research points[/b]: the research points (the orbs) of these stations fly straight to you, like when you sleep, wherever you are. Turn it off to have them drop next to the station instead, just like when you collect by hand. Zombie workers keep their research points as usual (they spend them on their own skills). (On by default.)
 [*][b]Empty wells into chests[/b]: an upgraded well fills up with water and stops once it is full. The mod moves the water into a chest within the search radius every few seconds, so the well keeps producing. (On by default.)
@@ -90,10 +96,10 @@ If there is no chest in range or the chest is full, everything works as in vanil
 [*]Extract the archive and copy the [b]BepInEx[/b] folder into your Graveyard Keeper 2 game folder.
 [*]The mod is now located at BepInEx/plugins/GraveyardAutomation/GraveyardAutomation.dll
 [/list]
-To check that it works, look for "Graveyard Automation 1.7.0 loaded" in BepInEx/LogOutput.log.
+To check that it works, look for "Graveyard Automation 1.8.1 loaded" in BepInEx/LogOutput.log.
 
 [size=4][b]Translations[/b][/size]
-With the GK2 Mod Framework (0.1.8 or newer), the settings and the mod description appear in your game language. English and German are included. To add your language, copy [i]BepInEx/plugins/GK2.Framework/Localization/graveyardautomation/en.json[/i] to a file named after your language code (e.g. [i]ko.json[/i]) in the same folder and translate the texts on the right side. Section headings in the Mods menu stay in English. Restart the game to see changes. Send me your file and I will gladly include it in the next version!
+With the GK2 Mod Framework (0.1.8 or newer), the settings and the mod description appear in your game language. English, German and Russian are included (Russian translation by Alex5Not). To add your language, copy [i]BepInEx/plugins/GK2.Framework/Localization/graveyardautomation/en.json[/i] to a file named after your language code (e.g. [i]ko.json[/i]) in the same folder and translate the texts on the right side. Section headings in the Mods menu stay in English. Restart the game to see changes. Send me your file and I will gladly include it in the next version!
 
 [size=4][b]Uninstall[/b][/size]
 Delete the folders BepInEx/plugins/GraveyardAutomation and BepInEx/plugins/GK2.Framework/Localization/graveyardautomation. Your save games are not affected.
@@ -110,6 +116,9 @@ Delete the folders BepInEx/plugins/GraveyardAutomation and BepInEx/plugins/GK2.F
 
 [size=4][b]Compatibility[/b][/size]
 Works with or without the GK2 Mod Framework. Other mods that also change crafting output, the craft queue or station speed may conflict.
+
+[size=4][b]Source code[/b][/size]
+The source code of this mod is on [url=https://github.com/BloodyLink2/GraveyardKeeper2-Mods]GitHub[/url] under the MIT license, together with my other mods. You can check what it does, learn from it or build it yourself.
 
 [size=4][b]Other Mods[/b][/size]
 [list]

@@ -94,70 +94,76 @@ namespace GraveyardAutomation
                     "Zombie workers take their ingredients from nearby storages, no other zombie has to bring them."),
                 order: 1);
 
+            context.Settings.AddToggle("Delivery", "ZombieIngredientsAllAreas", false,
+                Translations.Get("ZombieIngredientsAllAreas.name", "Zombie ingredients from all areas"),
+                Translations.Get("ZombieIngredientsAllAreas.hint",
+                    "Not enough nearby: zombies also take ingredients from the chests in all other areas."),
+                order: 2);
+
             context.Settings.AddToggle("Delivery", "AutoCrafters", true,
                 Translations.Get("AutoCrafters.name", "Auto-crafting stations"),
                 Translations.Get("AutoCrafters.hint",
                     "E.g. ovens: finished items go into a nearby chest, the station keeps running."),
-                order: 2);
+                order: 3);
 
             context.Settings.AddToggle("Delivery", "CollectResearchPoints", true,
                 Translations.Get("CollectResearchPoints.name", "Collect research points"),
                 Translations.Get("CollectResearchPoints.hint",
                     "Research points from these stations fly straight to you instead of dropping."),
-                order: 3);
+                order: 4);
 
             context.Settings.AddToggle("Delivery", "EmptyWells", true,
                 Translations.Get("EmptyWells.name", "Empty wells into chests"),
                 Translations.Get("EmptyWells.hint",
                     "Water from upgraded wells goes into a nearby chest, so the well never stops."),
-                order: 4);
+                order: 5);
 
             context.Settings.AddToggle("Delivery", "HarvestBeehives", true,
                 Translations.Get("HarvestBeehives.name", "Harvest beehives"),
                 Translations.Get("HarvestBeehives.hint",
                     "Full beehives are harvested into a nearby chest and start filling up again."),
-                order: 5);
+                order: 6);
 
             context.Settings.AddToggle("Delivery", "AutoRefuel", true,
                 Translations.Get("AutoRefuel.name", "Refuel from chests"),
                 Translations.Get("AutoRefuel.hint",
                     "Fuel storages make the fuel a waiting station needs from materials in your chests."),
-                order: 6);
+                order: 7);
 
             context.Settings.AddToggle("Queue", "RepeatRecipes", true,
                 Translations.Get("RepeatRecipes.name", "Repeat recipes (999x)"),
                 Translations.Get("RepeatRecipes.hint",
                     "Recipes queued with count 1 at ovens and zombie workbenches become 999."),
-                order: 7);
+                order: 8);
 
             context.Settings.AddToggle("Queue", "AutoRecipes", false,
                 Translations.Get("AutoRecipes.name", "Pick recipes from nearby chests"),
                 Translations.Get("AutoRecipes.hint",
                     "Idle ovens craft from the ingredients in a nearby chest, one at a time, what you lack most."),
-                order: 8);
+                order: 9);
 
             context.Settings.AddToggle("Queue", "ZombieAutoRecipes", false,
                 Translations.Get("ZombieAutoRecipes.name", "Pick recipes for zombie workbenches"),
                 Translations.Get("ZombieAutoRecipes.hint",
                     "Idle zombie workbenches pick a recipe from the ingredients in nearby chests, one at a time."),
-                order: 9);
+                order: 10);
 
             context.Settings.AddFloatSlider("Speed", "StationSpeed", 1f, 1f, Plugin.SpeedMax,
                 Translations.Get("StationSpeed.name", "Station speed"),
                 Translations.Get("StationSpeed.hint",
                     "How fast ovens, distillers and the like work (1.0 = normal). Not for tables you work at yourself."),
-                step: Plugin.SpeedStep, order: 10);
+                step: Plugin.SpeedStep, order: 11);
 
             context.Settings.AddFloatSlider("Delivery", "ChestRadius", 3f, 0f, Plugin.RadiusMax,
                 Translations.Get("ChestRadius.name", "Chest search radius"),
                 Translations.Get("ChestRadius.hint", "Max. distance to the chest (about 1 per tile). 0 = whole area."),
-                step: Plugin.RadiusStep, order: 11);
+                step: Plugin.RadiusStep, order: 12);
 
             context.Settings.AddToggle("Delivery", "DropIfNoChest", false,
                 Translations.Get("DropIfNoChest.name", "Drop on the ground if no chest"),
                 Translations.Get("DropIfNoChest.hint",
                     "No chest with room nearby: items drop next to the station, it keeps working."),
-                order: 12);
+                order: 13);
         }
 
         public override void OnEnable()

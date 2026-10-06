@@ -27,6 +27,8 @@ namespace GraveyardAutomation
         private static readonly HashSet<SGuid> loggedStations = new HashSet<SGuid>();
         private static readonly HashSet<SGuid> loggedSupplies = new HashSet<SGuid>();
         private static readonly List<WgoData> supplyChests = new List<WgoData>();
+        private static readonly List<WgoData> allChests = new List<WgoData>();
+        private static readonly HashSet<SGuid> loggedFarSupplies = new HashSet<SGuid>();
         private static readonly HashSet<string> loggedSkips = new HashSet<string>();
 
         private static float timer;
@@ -132,6 +134,9 @@ namespace GraveyardAutomation
         /// (DeliveryOrder) auf und wartet, bis ein Caretaker-Zombie sie bringt. Wir führen die Aufträge aus wie
         /// ZombieWgoData.CaretakerTryExecuteDeliveryOrder, nur mit den Lagern im Suchradius als Quelle. Aufträge, die ein
         /// Caretaker schon übernommen hat, bleiben ihm. Reicht der Vorrat nicht, wartet der Zombie wie gewohnt.
+        /// Mit "Zombie ingredients from all areas" kommt dann ein zweiter Versuch mit allen Lagern des Gebiets und den
+        /// Truhen aller anderen Gebiete (<see cref="ChestFinder.CollectEverywhere"/>). Ein gescheiterter Versuch ändert
+        /// nichts: OrderBase.TryExecuteOrder prüft erst HasItem und führt nur dann aus.
         /// </summary>
         private static void TrySupplyZombieIngredients(CraftComponent craft)
         {
@@ -145,6 +150,7 @@ namespace GraveyardAutomation
             orderIds.Clear();
             orderIds.AddRange(zombie.CrafterOrders);
             ChestSupplyExecutor executor = null;
+            ChestSupplyExecutor farExecutor = null;
             foreach (SGuid orderId in orderIds)
             {
                 if (!(zone.FindOrder(orderId) is DeliveryOrder order)) continue;
@@ -156,14 +162,37 @@ namespace GraveyardAutomation
                     ChestFinder.CollectNearby(station, supplyChests);
                     executor = new ChestSupplyExecutor(supplyChests);
                 }
+                bool fromFar = false;
                 if (!order.TryExecuteOrder(executor, out _))
                 {
-                    LogSkipOnce(station, $"waits for {order.Item.Count}x {order.Item.id}: not enough in the storages within the search radius");
-                    continue;
+                    if (!Plugin.ZombieIngredientsAllAreas.Value)
+                    {
+                        LogSkipOnce(station, $"waits for {order.Item.Count}x {order.Item.id}: not enough in the storages within the search radius");
+                        continue;
+                    }
+                    if (farExecutor == null)
+                    {
+                        ChestFinder.CollectEverywhere(station, supplyChests, allChests);
+                        farExecutor = new ChestSupplyExecutor(allChests);
+                    }
+                    if (!order.TryExecuteOrder(farExecutor, out _))
+                    {
+                        LogSkipOnce(station, $"waits for {order.Item.Count}x {order.Item.id}: not enough in the storages of this area and the chests of all other areas");
+                        continue;
+                    }
+                    fromFar = true;
                 }
                 zone.RemoveOrder(order.UniqueId);
                 zombie.CrafterOnOrderExecuted(order);
-                if (loggedSupplies.Add(station.UniqueId)) Plugin.Log($"{station.id} gets its ingredients from nearby storages.");
+                if (fromFar)
+                {
+                    if (loggedFarSupplies.Add(station.UniqueId))
+                        Plugin.Log($"{station.id} also gets ingredients from storages outside the search radius and from other areas.");
+                }
+                else if (loggedSupplies.Add(station.UniqueId))
+                {
+                    Plugin.Log($"{station.id} gets its ingredients from nearby storages.");
+                }
             }
         }
 

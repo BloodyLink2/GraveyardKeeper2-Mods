@@ -74,6 +74,9 @@ Delete the folders BepInEx/plugins/SermonEveryDay and BepInEx/plugins/GK2.Framew
 [size=4][b]Compatibility[/b][/size]
 Works with or without the GK2 Mod Framework. Other mods that also change when sermons are available may conflict.
 
+[size=4][b]Source code[/b][/size]
+The source code of this mod is on [url=https://github.com/BloodyLink2/GraveyardKeeper2-Mods]GitHub[/url] under the MIT license, together with my other mods. You can check what it does, learn from it or build it yourself.
+
 [size=4][b]Other Mods[/b][/size]
 [list]
 [*][url=https://www.nexusmods.com/graveyardkeeper2/mods/87][b]Resurrect Every Day[/b][/url]: resurrect zombies on any day of the week and as often as you like.

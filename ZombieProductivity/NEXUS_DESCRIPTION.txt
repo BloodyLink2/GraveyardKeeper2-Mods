@@ -68,6 +68,9 @@ Delete the folders BepInEx/plugins/ZombieProductivity and BepInEx/plugins/GK2.Fr
 [size=4][b]Compatibility[/b][/size]
 Works with or without the GK2 Mod Framework. Other mods that also change how fast zombies work or their mastery may conflict.
 
+[size=4][b]Source code[/b][/size]
+The source code of this mod is on [url=https://github.com/BloodyLink2/GraveyardKeeper2-Mods]GitHub[/url] under the MIT license, together with my other mods. You can check what it does, learn from it or build it yourself.
+
 [size=4][b]Other Mods[/b][/size]
 [list]
 [*][url=https://www.nexusmods.com/graveyardkeeper2/mods/89][b]Graveyard Automation[/b][/url]: finished items go straight into a nearby chest, ovens run on their own and refuel themselves.

@@ -13,4 +13,4 @@ In vanilla you can only preach once a week, on the Day of Wrath. Miss it, and yo
 - Settings in game via **F1** (ConfigurationManager) or **Mods** in the main menu or pause menu (GK2 Mod Framework). Changes apply instantly.
 - Changes no save game values, so you can add or remove it at any time. The daily counter starts over after loading a save.
 - Other mods that change when sermons are available may conflict.
-
+- Open source (MIT): [GitHub](<https://github.com/BloodyLink2/GraveyardKeeper2-Mods>)

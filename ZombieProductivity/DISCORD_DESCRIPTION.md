@@ -12,4 +12,4 @@ Your zombies are loyal, but not exactly fast. Zombie Productivity lets you decid
 - Stores no data in your save game, so you can add or remove it at any time.
 - Faster zombies still wait for you to pick up the result. To have finished items go straight into a chest, combine it with [Graveyard Automation](<https://www.nexusmods.com/graveyardkeeper2/mods/89>).
 - Other mods that change how fast zombies work or their mastery may conflict.
-
+- Open source (MIT): [GitHub](<https://github.com/BloodyLink2/GraveyardKeeper2-Mods>)

@@ -4,12 +4,12 @@ BepInEx 5 mods for [Graveyard Keeper 2](https://store.steampowered.com/app/43586
 
 | Mod | What it does | Source | Download |
 |---|---|---|---|
-| Tireless Keeper | Health and energy regenerate, insanity fades, sleep deprivation builds up slower. Optional infinite health and energy, faster work at tables. | [PlayerRegeneration](PlayerRegeneration) | [Nexus](https://www.nexusmods.com/graveyardkeeper2/mods/79) |
+| Tireless Keeper | Health and energy regenerate, insanity fades, sleep deprivation builds up slower. Optional infinite health and energy, faster work at tables, more stamina and healing zombies in fights. | [PlayerRegeneration](PlayerRegeneration) | [Nexus](https://www.nexusmods.com/graveyardkeeper2/mods/79) |
 | Sermon Every Day | Hold sermons on any day of the week and as often as you like. | [FlexibleCeremonies](FlexibleCeremonies) | [Nexus](https://www.nexusmods.com/graveyardkeeper2/mods/83) |
-| Resurrect Every Day | Resurrect zombies on any day of the week and as often as you like. | [ResurrectEveryDay](ResurrectEveryDay) | [Nexus](https://www.nexusmods.com/graveyardkeeper2/mods/87) |
-| Graveyard Automation | Finished items go straight into a nearby chest, ovens run on their own and refuel themselves, zombies take their ingredients from chests. | [GraveyardAutomation](GraveyardAutomation) | [Nexus](https://www.nexusmods.com/graveyardkeeper2/mods/89) |
+| Resurrect Every Day | Resurrect zombies on any day of the week and as often as you like, and use the PR Machine on any day. | [ResurrectEveryDay](ResurrectEveryDay) | [Nexus](https://www.nexusmods.com/graveyardkeeper2/mods/87) |
+| Graveyard Automation | Finished items go straight into a nearby chest, ovens run on their own and refuel themselves, zombies take their ingredients from chests, beehives harvest themselves. | [GraveyardAutomation](GraveyardAutomation) | [Nexus](https://www.nexusmods.com/graveyardkeeper2/mods/89) |
 | Zombie Productivity | Zombies work up to 10x faster at workbenches and in the garden, with optional extra mastery. | [ZombieProductivity](ZombieProductivity) | [Nexus](https://www.nexusmods.com/graveyardkeeper2/mods/90) |
-| Bigger Storage | Up to 100 extra slots for every chest and optional stacks of up to 300. | [BiggerStorage](BiggerStorage) | [Nexus](https://www.nexusmods.com/graveyardkeeper2/mods/113) |
+| Bigger Storage | Up to 100 extra slots for every chest and for the wood, stone and marble storages, optional stacks of up to 300. | [BiggerStorage](BiggerStorage) | [Nexus](https://www.nexusmods.com/graveyardkeeper2/mods/113) |
 
 Each mod folder has a `changelog.txt` with the changes of every version.
 
@@ -50,7 +50,7 @@ This creates `Releases/<ModName>-<Version>.zip` for every mod. The zip holds a s
 
 ## Translations
 
-The settings and mod descriptions are translated through the language files of the GK2 Mod Framework (0.1.8 or newer). Each mod has `Localization/en.json` and `Localization/de.json`, which end up in `BepInEx/plugins/GK2.Framework/Localization/<modid>/`.
+The settings and mod descriptions are translated through the language files of the GK2 Mod Framework (0.1.8 or newer). Each mod has `Localization/en.json` and `Localization/de.json`, which end up in `BepInEx/plugins/GK2.Framework/Localization/<modid>/`. Graveyard Automation also ships `Localization/ru.json`, translated by Alex5Not.
 
 - Texts in the code go through `Translations.Get("key", "English text")`. The English text is the fallback when the framework is missing.
 - `en.json` is generated from the code, so do not edit it by hand. After changing texts, run (Python 3):

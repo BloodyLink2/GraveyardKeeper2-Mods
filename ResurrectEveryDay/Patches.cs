@@ -93,4 +93,48 @@ namespace ResurrectEveryDay
             if (Plugin.UnlimitedPowerActive) MainGame.PlayerData.SetRes(ResurrectionGate.PowerKey, __state);
         }
     }
+
+    /// <summary>
+    /// PanicReductionMachineInteractionHandler.Interact bricht mit "PR Machine available on (Gluttony)" ab, wenn
+    /// EnvironmentData.CurrentDayNumber != ConstDef.Get("day_gluttony").IntValue ist. Genau dieser eine
+    /// IntValue-Aufruf wird auf <see cref="PrMachineGate.GetAllowedDay"/> umgeleitet (Instanz wird erstes Argument).
+    /// </summary>
+    [HarmonyPatch(typeof(PanicReductionMachineInteractionHandler), nameof(PanicReductionMachineInteractionHandler.Interact))]
+    internal static class PrMachineDayPatch
+    {
+        private static readonly MethodInfo IntValue =
+            AccessTools.PropertyGetter(typeof(ConstDef), nameof(ConstDef.IntValue));
+
+        private static readonly MethodInfo Gate =
+            AccessTools.Method(typeof(PrMachineGate), nameof(PrMachineGate.GetAllowedDay));
+
+        private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var codes = new List<CodeInstruction>(instructions);
+            bool afterKey = false;
+            int replaced = 0;
+
+            foreach (CodeInstruction code in codes)
+            {
+                if (code.opcode == OpCodes.Ldstr && code.operand as string == PrMachineGate.DayKey)
+                {
+                    afterKey = true;
+                }
+                else if (afterKey && code.Calls(IntValue))
+                {
+                    code.opcode = OpCodes.Call;
+                    code.operand = Gate;
+                    afterKey = false;
+                    replaced++;
+                }
+            }
+
+            if (replaced == 1)
+                Plugin.Log("PR Machine day check redirected.");
+            else
+                Plugin.LogWarning($"PR Machine day check not found ({replaced} matches), so \"PR Machine on any day\" has no effect. " +
+                                  "A game update probably changed the code.");
+            return codes;
+        }
+    }
 }

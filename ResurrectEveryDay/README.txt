@@ -1,4 +1,4 @@
-RESURRECT EVERY DAY 1.1.0 for Graveyard Keeper 2 (BepInEx mod)
+RESURRECT EVERY DAY 1.2.0 for Graveyard Keeper 2 (BepInEx mod)
 ==============================================================
 
 What the mod does
@@ -8,10 +8,17 @@ the resurrection lab work, and its storm power recharges just once a week (at th
 of Lust) and is used up by a resurrection. The only exception is the "God of the storms" buff
 from the Prayer for Storms.
 
+The PR Machine, which raises your zombie limit, has a similar lock: it can only be used on the
+Day of Gluttony.
+
 - Resurrect on any day (toggle, default on): the power switch works on all six days of the week.
 - Unlimited storm power (toggle, default on): the lab always has power, so you can resurrect as
   often as you like. Off = vanilla: the power recharges once a week and is used up by a
   resurrection.
+- PR Machine on any day (toggle, default on): the PR Machine can be used on all six days of the
+  week, so you can raise the zombie limit again as soon as the previous run has ended. A run still
+  ends at the end of a Day of Wrath, like in vanilla. Started on the Day of Wrath, its first week
+  is over the same evening.
 - Everything else stays as usual: you still prepare the resurrection tables with a body, all main
   organs, the resurrection liquid and a collar, and then pull the power switch.
 - With unlimited power on, the mod does not use up your weekly vanilla power, so your save is left
@@ -43,7 +50,8 @@ Check
 BepInEx/LogOutput.log should contain:
   "Day check hooked."
   "Power check redirected."
-  "Resurrect Every Day 1.1.0 loaded (framework: yes/no, ...)"
+  "PR Machine day check redirected."
+  "Resurrect Every Day 1.2.0 loaded (framework: yes/no, ...)"
 If one of them says "... not found" instead, a game update has changed the code and that part
 of the mod has no effect.
 

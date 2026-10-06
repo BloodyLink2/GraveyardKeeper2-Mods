@@ -59,7 +59,8 @@ namespace ResurrectEveryDay
             "BloodyLink2",
             Plugin.Version,
             Translations.Get("mod.description",
-                "Resurrect zombies on any day and as often as you like, not just once on the Day of Envy."),
+                "Resurrect zombies on any day and as often as you like, not just once on the Day of Envy. " +
+                "The PR Machine works on any day too."),
             supportsRuntimeToggle: true,
             requiresKnownBuild: false);
 
@@ -78,6 +79,11 @@ namespace ResurrectEveryDay
                 Translations.Get("UnlimitedPower.name", "Unlimited storm power"),
                 Translations.Get("UnlimitedPower.hint", "The lab always has power. Off = recharges once a week."),
                 order: 1);
+
+            context.Settings.AddToggle("PR Machine", "PrMachineAnyDay", true,
+                Translations.Get("PrMachineAnyDay.name", "PR Machine on any day"),
+                Translations.Get("PrMachineAnyDay.hint", "Not just on the Day of Gluttony. A run still ends on a Day of Wrath."),
+                order: 2);
         }
 
         public override void OnEnable()

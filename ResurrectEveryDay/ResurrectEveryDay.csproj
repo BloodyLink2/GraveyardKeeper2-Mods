@@ -5,7 +5,7 @@
     <RootNamespace>ResurrectEveryDay</RootNamespace>
     <LangVersion>9.0</LangVersion>
     <Nullable>disable</Nullable>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <!-- Mod-Id beim GK2 Mod Framework (Plugin.ModId) – Ordnername der Sprachdateien. -->
     <FrameworkModId>resurrecteveryday</FrameworkModId>
     <Authors>BloodyLink2</Authors>

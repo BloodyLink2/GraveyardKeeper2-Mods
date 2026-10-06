@@ -1,6 +1,14 @@
 RESURRECT EVERY DAY: Changelog
 ==============================
 
+1.2.0 (2026-10-07)
+------------------
+- New option "PR Machine on any day" (on by default): use the PR Machine on every day of the week,
+  not just on the Day of Gluttony, so you can raise the zombie limit again as soon as the previous
+  run has ended. A run still ends at the end of a Day of Wrath, like in vanilla.
+- Reworded some texts.
+- Checked against the game update 1.009: no changes needed.
+
 1.1.0 (2026-09-24)
 ------------------
 - Translations: the settings (F1 menu and GK2 Mod Framework menu) and the mod description can now

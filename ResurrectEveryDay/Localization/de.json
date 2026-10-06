@@ -1,5 +1,5 @@
 {
-  "mod.description": "Zombies an jedem Tag und so oft du willst wiederbeleben, nicht nur einmal am Tag des Neids.",
+  "mod.description": "Zombies an jedem Tag und so oft du willst wiederbeleben, nicht nur einmal am Tag des Neids. Auch die PR-Maschine läuft an jedem Tag.",
   "Enabled.name": "Mod aktiv",
   "Enabled.description": "Schaltet die Mod ein oder aus (wirkt sofort).",
   "AnyDay.name": "Wiederbelebung an jedem Tag",
@@ -7,5 +7,8 @@
   "AnyDay.hint": "Nicht nur am Tag des Neids.",
   "UnlimitedPower.name": "Unbegrenzte Sturmenergie",
   "UnlimitedPower.description": "Der Stromschalter im Wiederbelebungslabor hat immer Energie, du kannst also so oft wiederbeleben, wie du willst. Aus = wie im Originalspiel: Die Energie lädt sich einmal pro Woche am Ende des Tages der Lust auf und wird von einer Wiederbelebung verbraucht.",
-  "UnlimitedPower.hint": "Das Labor hat immer Energie. Aus = lädt sich einmal pro Woche auf."
+  "UnlimitedPower.hint": "Das Labor hat immer Energie. Aus = lädt sich einmal pro Woche auf.",
+  "PrMachineAnyDay.name": "PR-Maschine an jedem Tag",
+  "PrMachineAnyDay.description": "Die PR-Maschine lässt sich an jedem Wochentag benutzen, nicht nur am Tag der Völlerei. So kannst du das Zombie-Limit wieder anheben, sobald der vorige Durchgang beendet ist. Ein Durchgang endet wie im Originalspiel am Ende eines Tages des Zorns: Am Tag des Zorns gestartet, ist seine erste Woche noch am selben Abend vorbei.",
+  "PrMachineAnyDay.hint": "Nicht nur am Tag der Völlerei. Ein Durchgang endet weiter an einem Tag des Zorns."
 }

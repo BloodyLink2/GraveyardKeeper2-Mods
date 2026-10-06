@@ -2,15 +2,18 @@
 Resurrect Every Day
 
 ===== BRIEF OVERVIEW (max. 350 characters) =====
-Resurrect zombies on any day of the week and as often as you like, not just once on the Day of Envy. The power switch in the resurrection lab always works and never runs out of storm power. Both options can be toggled separately in game via F1 or the GK2 Mod Framework menu.
+Resurrect zombies on any day of the week and as often as you like, not just once on the Day of Envy. The power switch in the resurrection lab always works and never runs out of storm power. The PR Machine works on any day too. All options can be toggled in game via F1 or the GK2 Mod Framework menu.
 
 ===== SHORT DESCRIPTION =====
-Resurrect zombies on any day and as often as you like, not just once on the Day of Envy. Fully configurable in game.
+Resurrect zombies on any day and as often as you like, not just once on the Day of Envy, and use the PR Machine on any day. Fully configurable in game.
 
 ===== FILE DESCRIPTION =====
-Settings can now be translated (GK2 Mod Framework 0.1.8 or newer), English and German included. Copy the BepInEx folder into your Graveyard Keeper 2 game folder (overwrite the old version). Requires BepInEx 5.4.23.5 (x64).
+New option: use the PR Machine on any day of the week, not just on the Day of Gluttony. Copy the BepInEx folder into your Graveyard Keeper 2 game folder (overwrite the old version). Requires BepInEx 5.4.23.5 (x64).
 
 ===== CHANGELOG =====
+1.2.0
+- New option "PR Machine on any day" (on by default): use the PR Machine on every day of the week, not just on the Day of Gluttony, so you can raise the zombie limit again as soon as the previous run has ended. A run still ends at the end of a Day of Wrath, like in vanilla.
+- Reworded some texts.
 1.1.0
 - Translations: the settings (F1 menu and GK2 Mod Framework menu) and the mod description can now be translated with language files of the GK2 Mod Framework (0.1.8 or newer). English and German are included.
 1.0.0
@@ -18,17 +21,18 @@ Settings can now be translated (GK2 Mod Framework 0.1.8 or newer), English and G
 
 ===== TAGS =====
 Nexus tags: Quality of Life, Gameplay, Cheating (because of "Unlimited storm power")
-Custom tags: Zombies, Resurrection, Day of Envy, Storm, BepInEx, GK2 Mod Framework
+Custom tags: Zombies, Resurrection, Day of Envy, Storm, PR Machine, Zombie limit, BepInEx, GK2 Mod Framework
 
 ===== DESCRIPTION (BBCode) =====
 [size=5][b]Resurrect Every Day[/b][/size]
 
-In vanilla Graveyard Keeper 2 you can only resurrect zombies on the Day of Envy. That is the only day the power switch in the resurrection lab works, and its storm power recharges just once a week. Prepared a table on the wrong day? Then your corpse waits until next week. Resurrect Every Day lifts that restriction: pull the switch whenever you like.
+In vanilla Graveyard Keeper 2 you can only resurrect zombies on the Day of Envy. That is the only day the power switch in the resurrection lab works, and its storm power recharges just once a week. Prepared a table on the wrong day? Then your corpse waits until next week. Resurrect Every Day lifts that restriction: pull the switch whenever you like. The PR Machine, which raises your zombie limit, is no longer tied to the Day of Gluttony either.
 
 [size=4][b]Features[/b][/size]
 [list]
 [*][b]Resurrect on any day[/b]: the power switch works on all six days of the week, not just the Day of Envy. (On by default.)
 [*][b]Unlimited storm power[/b]: the lab always has power, so you can resurrect as often as you like. Turn it off for the vanilla rhythm: the power recharges once a week at the end of the Day of Lust and is used up by a resurrection. (On by default.)
+[*][b]PR Machine on any day[/b]: use the PR Machine on all six days of the week, not just the Day of Gluttony, so you can raise the zombie limit again as soon as the previous run has ended. (On by default.)
 [*][b]Nothing else changes[/b]: you still prepare the resurrection tables with a body, all main organs, the resurrection liquid and a collar, then pull the power switch as usual.
 [/list]
 All settings apply instantly, no restart needed. With unlimited power on, the mod does not use up your weekly vanilla power, so you can add or remove it at any time.
@@ -52,7 +56,7 @@ All settings apply instantly, no restart needed. With unlimited power on, the mo
 [*]Extract the archive and copy the [b]BepInEx[/b] folder into your Graveyard Keeper 2 game folder.
 [*]The mod is now located at BepInEx/plugins/ResurrectEveryDay/ResurrectEveryDay.dll
 [/list]
-To check that it works, look for "Day check hooked.", "Power check redirected." and "Resurrect Every Day 1.1.0 loaded" in BepInEx/LogOutput.log.
+To check that it works, look for "Day check hooked.", "Power check redirected.", "PR Machine day check redirected." and "Resurrect Every Day 1.2.0 loaded" in BepInEx/LogOutput.log.
 
 [size=4][b]Translations[/b][/size]
 With the GK2 Mod Framework (0.1.8 or newer), the settings and the mod description appear in your game language. English and German are included. To add your language, copy [i]BepInEx/plugins/GK2.Framework/Localization/resurrecteveryday/en.json[/i] to a file named after your language code (e.g. [i]ko.json[/i]) in the same folder and translate the texts on the right side. Section headings in the Mods menu stay in English. Restart the game to see changes. Send me your file and I will gladly include it in the next version!
@@ -63,11 +67,15 @@ Delete the folders BepInEx/plugins/ResurrectEveryDay and BepInEx/plugins/GK2.Fra
 [size=4][b]Good to know[/b][/size]
 [list=1]
 [*]Like in vanilla, one pull of the power switch resurrects all prepared tables at once.
+[*]A PR Machine run still ends at the end of a Day of Wrath, like in vanilla, because its weeks are counted in Days of Wrath. A run started on the Day of Wrath loses its first week the same evening. Start the next run on the day after to get the most out of it.
 [*]If the log says "... not found" instead, a game update has changed the code and that part of the mod has no effect until it is updated.
 [/list]
 
 [size=4][b]Compatibility[/b][/size]
-Works with or without the GK2 Mod Framework. Other mods that also change the resurrection lab or its power switch may conflict.
+Works with or without the GK2 Mod Framework. Other mods that also change the resurrection lab, its power switch or the PR Machine may conflict.
+
+[size=4][b]Source code[/b][/size]
+The source code of this mod is on [url=https://github.com/BloodyLink2/GraveyardKeeper2-Mods]GitHub[/url] under the MIT license, together with my other mods. You can check what it does, learn from it or build it yourself.
 
 [size=4][b]Other Mods[/b][/size]
 [list]

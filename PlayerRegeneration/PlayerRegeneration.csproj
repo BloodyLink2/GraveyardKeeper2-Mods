@@ -6,7 +6,7 @@
     <RootNamespace>PlayerRegeneration</RootNamespace>
     <LangVersion>9.0</LangVersion>
     <Nullable>disable</Nullable>
-    <Version>1.2.0</Version>
+    <Version>1.3.0</Version>
     <!-- Mod-Id beim GK2 Mod Framework (Plugin.ModId) – Ordnername der Sprachdateien. -->
     <FrameworkModId>playerregeneration</FrameworkModId>
     <Authors>BloodyLink2</Authors>

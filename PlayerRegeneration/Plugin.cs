@@ -13,7 +13,7 @@ namespace PlayerRegeneration
     {
         public const string Guid = "de.gk2mods.playerregeneration";
         public const string Name = "Tireless Keeper";
-        public const string Version = "1.2.0";
+        public const string Version = "1.3.0";
 
         internal const string FrameworkGuid = "ru.superman4eg.gk2.framework";
         internal const string ModId = "playerregeneration";
@@ -24,6 +24,8 @@ namespace PlayerRegeneration
         internal const float EnergyRateMax = 5f;
         internal const float InsanityRateMax = 5f;
         internal const float WorkSpeedMax = 10f;
+        internal const float StaminaSpeedMax = 10f;
+        internal const float ZombieHealthPercentMax = 10f;
 
         internal static Plugin Instance;
 
@@ -37,6 +39,9 @@ namespace PlayerRegeneration
         internal static ConfigEntry<float> SleepDeprivationSpeed;
         internal static ConfigEntry<bool> SleepWithFullEnergy;
         internal static ConfigEntry<float> WorkSpeed;
+        internal static ConfigEntry<float> StaminaRegenerationSpeed;
+        internal static ConfigEntry<bool> InfiniteStamina;
+        internal static ConfigEntry<float> ZombieHealthPercent;
 
         internal static bool FrameworkMode;
         internal static bool FrameworkEnabled;
@@ -50,6 +55,8 @@ namespace PlayerRegeneration
 
         internal static bool SleepWithFullEnergyActive => IsActive && SleepWithFullEnergy.Value;
 
+        internal static bool InfiniteStaminaActive => IsActive && InfiniteStamina.Value;
+
         private void Awake()
         {
             Instance = this;
@@ -57,48 +64,48 @@ namespace PlayerRegeneration
             Enabled = Config.Bind("Framework", "Enabled", true, Describe(
                 Translations.Get("Enabled.name", "Mod enabled"),
                 Translations.Get("Enabled.description", "Turns the mod on or off (takes effect immediately)."),
-                8));
+                11));
 
             HealthPerSecond = BindStepped("Regeneration", "HealthPerSecond", 0.5f, 0f, HealthRateMax,
                 Translations.Get("HealthPerSecond.name", "Health per second"),
                 Translations.Get("HealthPerSecond.description",
-                    "Health points the player regains per second (0 = off). Also works during combat."), 7);
+                    "Health points the player regains per second (0 = off). Also works during combat."), 10);
 
             InfiniteHealth = BindToggle("Infinite", "InfiniteHealth", false,
                 Translations.Get("InfiniteHealth.name", "Infinite health"),
                 Translations.Get("InfiniteHealth.description",
                     "The player no longer takes damage and always has full health. If a scene waits for the player " +
-                    "to take damage or die, it cannot continue. Turn this off briefly then."), 6);
+                    "to take damage or die, it cannot continue. Turn this off briefly then."), 9);
 
             EnergyPerSecond = BindStepped("Regeneration", "EnergyPerSecond", 0.2f, 0f, EnergyRateMax,
                 Translations.Get("EnergyPerSecond.name", "Energy per second"),
                 Translations.Get("EnergyPerSecond.description",
-                    "Energy the player regains per second (0 = off). The bar goes up to 100."), 5);
+                    "Energy the player regains per second (0 = off). The bar goes up to 100."), 8);
 
             InfiniteEnergy = BindToggle("Infinite", "InfiniteEnergy", false,
                 Translations.Get("InfiniteEnergy.name", "Infinite energy"),
                 Translations.Get("InfiniteEnergy.description",
                     "Work no longer costs energy, the bar stays full and no task fails for lack of energy. This also " +
-                    "means working while sleep-deprived no longer adds insanity."), 4);
+                    "means working while sleep-deprived no longer adds insanity."), 7);
 
             InsanityReductionPerSecond = BindStepped("Regeneration", "InsanityReductionPerSecond", 0.1f, 0f, InsanityRateMax,
                 Translations.Get("InsanityReductionPerSecond.name", "Insanity reduction per second"),
                 Translations.Get("InsanityReductionPerSecond.description",
                     "How much insanity fades per second (0 = off). Insanity lowers your maximum energy (maximum = " +
                     "100 - insanity) and rises with every task while sleep-deprived. If you need insanity for " +
-                    "certain recipes, set this to 0."), 3);
+                    "certain recipes, set this to 0."), 6);
 
             SleepDeprivationSpeed = BindStepped("Sleep", "SleepDeprivationSpeed", 0.5f, 0f, 1f,
                 Translations.Get("SleepDeprivationSpeed.name", "Sleep deprivation speed"),
                 Translations.Get("SleepDeprivationSpeed.description",
                     "How fast sleep deprivation builds up. 1.0 = vanilla (debuff after 2 days without sleep), 0.5 = " +
-                    "after 4 days, 0 = never. A debuff that is already active only goes away with the next sleep."), 2);
+                    "after 4 days, 0 = never. A debuff that is already active only goes away with the next sleep."), 5);
 
             SleepWithFullEnergy = BindToggle("Sleep", "SleepWithFullEnergy", true,
                 Translations.Get("SleepWithFullEnergy.name", "Sleep with full energy"),
                 Translations.Get("SleepWithFullEnergy.description",
                     "The bed no longer refuses with \"no need to sleep\" when your energy bar is full. Important " +
-                    "because the game only saves when you sleep. With full energy the sleep is just short."), 1);
+                    "because the game only saves when you sleep. With full energy the sleep is just short."), 4);
 
             WorkSpeed = BindStepped("Work", "WorkSpeed", 1f, 1f, WorkSpeedMax,
                 Translations.Get("WorkSpeed.name", "Your work speed at tables"),
@@ -106,7 +113,24 @@ namespace PlayerRegeneration
                     "How much progress each of your hits makes when you work at a table yourself, such as " +
                     "workbenches, the autopsy and embalming table or the study table (1.0 = normal, up to 10x). " +
                     "Every hit still costs energy as usual, so a craft costs less energy in total. Recipes above " +
-                    "your mastery stay locked."), 0);
+                    "your mastery stay locked."), 3);
+
+            StaminaRegenerationSpeed = BindStepped("Combat", "StaminaRegenerationSpeed", 1f, 1f, StaminaSpeedMax,
+                Translations.Get("StaminaRegenerationSpeed.name", "Stamina regeneration speed"),
+                Translations.Get("StaminaRegenerationSpeed.description",
+                    "How fast your stamina refills in fights (1.0 = normal, up to 10x). The short pause after an " +
+                    "attack before it starts to refill gets shorter by the same factor."), 2);
+
+            InfiniteStamina = BindToggle("Combat", "InfiniteStamina", false,
+                Translations.Get("InfiniteStamina.name", "Infinite stamina"),
+                Translations.Get("InfiniteStamina.description",
+                    "Attacks with sword, spear and bow no longer cost stamina, the bar stays full."), 1);
+
+            ZombieHealthPercent = BindStepped("Combat", "ZombieHealthPercentPerSecond", 0f, 0f, ZombieHealthPercentMax,
+                Translations.Get("ZombieHealthPercent.name", "Zombie health per second (%)"),
+                Translations.Get("ZombieHealthPercent.description",
+                    "During fights, your zombies regain this share of their maximum health every second (0 = off, " +
+                    "up to 10%). A zombie that has fallen stays down."), 0);
 
             var harmony = new Harmony(Guid);
             harmony.CreateClassProcessor(typeof(PlayerUpdatePatch)).Patch();
@@ -116,6 +140,9 @@ namespace PlayerRegeneration
             harmony.CreateClassProcessor(typeof(InfiniteEnergyCheckPatch)).Patch();
             harmony.CreateClassProcessor(typeof(SleepWithFullEnergyPatch)).Patch();
             harmony.CreateClassProcessor(typeof(WorkSpeedPatch)).Patch();
+            harmony.CreateClassProcessor(typeof(StaminaRegenerationPatch)).Patch();
+            harmony.CreateClassProcessor(typeof(InfiniteStaminaPatch)).Patch();
+            harmony.CreateClassProcessor(typeof(FightUpdatePatch)).Patch();
 
             if (Chainloader.PluginInfos.ContainsKey(FrameworkGuid))
             {
@@ -136,7 +163,9 @@ namespace PlayerRegeneration
                            $"health {HealthPerSecond.Value:0.0}/s, energy {EnergyPerSecond.Value:0.0}/s, " +
                            $"insanity -{InsanityReductionPerSecond.Value:0.0}/s, sleep deprivation speed {SleepDeprivationSpeed.Value:0.0}x, " +
                            $"infinite health {(InfiniteHealth.Value ? "on" : "off")}, infinite energy {(InfiniteEnergy.Value ? "on" : "off")}, " +
-                           $"sleep with full energy {(SleepWithFullEnergy.Value ? "on" : "off")}, work speed {WorkSpeed.Value:0.0}x).");
+                           $"sleep with full energy {(SleepWithFullEnergy.Value ? "on" : "off")}, work speed {WorkSpeed.Value:0.0}x, " +
+                           $"stamina regeneration {StaminaRegenerationSpeed.Value:0.0}x, infinite stamina {(InfiniteStamina.Value ? "on" : "off")}, " +
+                           $"zombie health {ZombieHealthPercent.Value:0.0}%/s).");
         }
 
         private ConfigEntry<bool> BindToggle(string section, string key, bool defaultValue, string displayName, string description, int order)

@@ -103,4 +103,44 @@ namespace PlayerRegeneration
             remainder = total - __result;
         }
     }
+
+    /// <summary>
+    /// "Stamina regeneration speed": StaminaSystem.UpdateStaminaLogic zählt mit deltaTime erst die Pause nach einem Angriff
+    /// (stamina_regeneration_delay) ab und füllt dann stamina_regeneration pro Sekunde auf. Aufgerufen wird es nur im
+    /// Kampf (FightingGameController.Update). Wir lassen für die Ausdauer die Zeit schneller laufen. Mit "Infinite
+    /// stamina" bleibt der Balken einfach voll.
+    /// </summary>
+    [HarmonyPatch(typeof(StaminaSystem), nameof(StaminaSystem.UpdateStaminaLogic))]
+    internal static class StaminaRegenerationPatch
+    {
+        private static bool Prefix(ref float deltaTime)
+        {
+            if (!Plugin.IsActive) return true;
+            if (Plugin.InfiniteStamina.Value)
+            {
+                PlayerStaminaGameResSystem stamina = PlayerStaminaGameResSystem.GetSystem();
+                if (stamina != null && !stamina.HasMax()) stamina.Set(stamina.Max);
+                return false;
+            }
+            deltaTime *= Plugin.StaminaRegenerationSpeed.Value;
+            return true;
+        }
+    }
+
+    /// <summary>
+    /// "Infinite stamina": Jeder Angriff (Schwert, Speer, Bogen) zieht über StaminaSystem.ConsumeStamina die Kosten der
+    /// Waffe ab. Ohne Abzug bleibt der Balken voll, und CanPerformAttack lässt jeden Angriff zu.
+    /// </summary>
+    [HarmonyPatch(typeof(StaminaSystem), nameof(StaminaSystem.ConsumeStamina))]
+    internal static class InfiniteStaminaPatch
+    {
+        private static bool Prefix() => !Plugin.InfiniteStaminaActive;
+    }
+
+    /// <summary>FightingGameController.Update läuft jeden Frame, solange eine Kampfebene geladen ist.</summary>
+    [HarmonyPatch(typeof(FightingGameController), "Update")]
+    internal static class FightUpdatePatch
+    {
+        private static void Postfix(FightingGameController __instance) => ZombieRegeneration.Update(__instance);
+    }
 }

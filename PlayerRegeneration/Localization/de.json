@@ -1,5 +1,5 @@
 {
-  "mod.description": "Gesundheit und Energie regenerieren sich (oder bleiben voll), Wahnsinn baut sich ab und Schlafmangel kommt langsamer.",
+  "mod.description": "Gesundheit und Energie regenerieren sich (oder bleiben voll), Wahnsinn baut sich ab, Schlafmangel kommt langsamer, dazu mehr Ausdauer und Zombie-Gesundheit im Kampf.",
   "Enabled.name": "Mod aktiv",
   "Enabled.description": "Schaltet die Mod ein oder aus (wirkt sofort).",
   "HealthPerSecond.name": "Gesundheit pro Sekunde",
@@ -25,5 +25,14 @@
   "SleepWithFullEnergy.hint": "Das Bett verweigert nicht mehr bei voller Energie. Wichtig zum Speichern.",
   "WorkSpeed.name": "Eigenes Arbeitstempo an Tischen",
   "WorkSpeed.description": "Wie viel Fortschritt jeder deiner Schläge bringt, wenn du selbst an einem Tisch arbeitest, etwa an Werkbänken, am Autopsie- und Einbalsamierungstisch oder am Forschungstisch (1.0 = normal, bis 10x). Jeder Schlag kostet weiter Energie wie gewohnt, ein Durchgang kostet also insgesamt weniger Energie. Rezepte über deiner Meisterschaft bleiben gesperrt.",
-  "WorkSpeed.hint": "Mehr Fortschritt pro Schlag, wenn du selbst an einem Tisch arbeitest (1.0 = normal)."
+  "WorkSpeed.hint": "Mehr Fortschritt pro Schlag, wenn du selbst an einem Tisch arbeitest (1.0 = normal).",
+  "StaminaRegenerationSpeed.name": "Ausdauer-Regeneration",
+  "StaminaRegenerationSpeed.description": "Wie schnell sich deine Ausdauer im Kampf wieder auffüllt (1.0 = normal, bis 10x). Die kurze Pause nach einem Angriff, bevor sie sich auffüllt, wird um denselben Faktor kürzer.",
+  "StaminaRegenerationSpeed.hint": "Wie schnell sich deine Ausdauer im Kampf auffüllt (1.0 = normal).",
+  "InfiniteStamina.name": "Unendliche Ausdauer",
+  "InfiniteStamina.description": "Angriffe mit Schwert, Speer und Bogen kosten keine Ausdauer mehr, der Balken bleibt voll.",
+  "InfiniteStamina.hint": "Angriffe kosten keine Ausdauer, der Balken bleibt voll.",
+  "ZombieHealthPercent.name": "Zombie-Gesundheit pro Sekunde (%)",
+  "ZombieHealthPercent.description": "Im Kampf bekommen deine Zombies jede Sekunde diesen Anteil ihrer maximalen Lebenspunkte zurück (0 = aus, bis 10 %). Ein gefallener Zombie bleibt liegen.",
+  "ZombieHealthPercent.hint": "Anteil ihrer maximalen Lebenspunkte, den deine Zombies im Kampf pro Sekunde zurückbekommen (0 = aus)."
 }

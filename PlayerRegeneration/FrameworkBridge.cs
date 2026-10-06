@@ -59,7 +59,8 @@ namespace PlayerRegeneration
             "BloodyLink2",
             Plugin.Version,
             Translations.Get("mod.description",
-                "Health and energy regenerate (or stay full), insanity fades and sleep deprivation builds up slower."),
+                "Health and energy regenerate (or stay full), insanity fades, sleep deprivation builds up slower, " +
+                "and more stamina and zombie health in fights."),
             supportsRuntimeToggle: true,
             requiresKnownBuild: false);
 
@@ -112,6 +113,22 @@ namespace PlayerRegeneration
                 Translations.Get("WorkSpeed.name", "Your work speed at tables"),
                 Translations.Get("WorkSpeed.hint", "More progress per hit when you work at a table yourself (1.0 = normal)."),
                 step: Plugin.Step, order: 7);
+
+            context.Settings.AddFloatSlider("Combat", "StaminaRegenerationSpeed", 1f, 1f, Plugin.StaminaSpeedMax,
+                Translations.Get("StaminaRegenerationSpeed.name", "Stamina regeneration speed"),
+                Translations.Get("StaminaRegenerationSpeed.hint", "How fast your stamina refills in fights (1.0 = normal)."),
+                step: Plugin.Step, order: 8);
+
+            context.Settings.AddToggle("Combat", "InfiniteStamina", false,
+                Translations.Get("InfiniteStamina.name", "Infinite stamina"),
+                Translations.Get("InfiniteStamina.hint", "Attacks cost no stamina, the bar stays full."),
+                order: 9);
+
+            context.Settings.AddFloatSlider("Combat", "ZombieHealthPercentPerSecond", 0f, 0f, Plugin.ZombieHealthPercentMax,
+                Translations.Get("ZombieHealthPercent.name", "Zombie health per second (%)"),
+                Translations.Get("ZombieHealthPercent.hint",
+                    "Share of their maximum health your zombies regain per second in fights (0 = off)."),
+                step: Plugin.Step, order: 10);
         }
 
         public override void OnEnable()

@@ -1,6 +1,18 @@
 TIRELESS KEEPER: Changelog
 ==========================
 
+1.3.0 (2026-09-27)
+------------------
+- New section "Combat" with three options:
+  - Stamina regeneration speed (1.0 = normal, up to 10x): your stamina refills faster in fights,
+    and the short pause after an attack gets shorter too.
+  - Infinite stamina (off by default): attacks with sword, spear and bow cost no stamina.
+  - Zombie health per second (0 = off, up to 10% of their maximum health): your zombies heal
+    during fights. A zombie that has fallen stays down.
+- Checked against the game patch 1.006 and GK2 Mod Framework 0.1.12: no changes needed. With
+  0.1.12 you can also change the settings in game via the Mods button in the pause menu.
+- Reworded some texts.
+
 1.2.0 (2026-09-24)
 ------------------
 - New option "Your work speed at tables" (1.0 = normal, up to 10x): more progress per hit when you

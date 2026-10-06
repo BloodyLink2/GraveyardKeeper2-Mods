@@ -2,12 +2,16 @@
 Tireless Keeper
 
 ===== BRIEF OVERVIEW (max. 350 characters) =====
-Health and energy regenerate over time, insanity slowly fades and sleep deprivation builds up slower. Optional infinite health/energy, faster work at tables and sleeping with a full energy bar (the game only saves when you sleep). Every value is adjustable in game via F1 or the GK2 Mod Framework menu.
+Health and energy regenerate over time, insanity fades and sleep deprivation builds up slower. Optional infinite health/energy, faster work at tables, sleeping with a full energy bar and help in fights: faster or infinite stamina and healing zombies. Every value is adjustable in game via F1 or the GK2 Mod Framework menu.
 
 ===== FILE DESCRIPTION =====
-New option "Your work speed at tables": more progress per hit when you work at a table yourself. Copy the BepInEx folder into your Graveyard Keeper 2 game folder (overwrite the old version). Requires BepInEx 5.4.23.5 (x64).
+New combat options: faster or infinite stamina, and your zombies heal during fights. Copy the BepInEx folder into your Graveyard Keeper 2 game folder (overwrite the old version). Requires BepInEx 5.4.23.5 (x64).
 
 ===== CHANGELOG =====
+1.3.0
+- New section "Combat": Stamina regeneration speed (1.0 = normal, up to 10x), Infinite stamina (off by default) and Zombie health per second (0 = off, up to 10% of their maximum health, only during fights).
+- Checked against the game patch 1.006 and GK2 Mod Framework 0.1.12: no changes needed. With 0.1.12 you can also change the settings in game via the Mods button in the pause menu.
+- Reworded some texts.
 1.2.0
 - New option "Your work speed at tables" (1.0 = normal, up to 10x): more progress per hit when you work at a table yourself, such as workbenches, the autopsy and embalming table or the study table.
 1.1.0
@@ -30,6 +34,9 @@ Tired of running out of energy halfway through your to-do list? Tireless Keeper 
 [*][b]Infinite health[/b] (optional): no damage at all, health stays full.
 [*][b]Infinite energy[/b] (optional): work costs no energy and no task fails for lack of energy, not even at high insanity.
 [*][b]Your work speed at tables[/b]: each of your hits at a workbench, the autopsy or embalming table, the study table and the like makes up to 10x more progress. Every hit still costs energy as usual, and recipes above your mastery stay locked. (1.0 = normal by default.)
+[*][b]Stamina regeneration speed[/b]: your stamina refills up to 10x faster in fights, and the short pause after an attack gets shorter too. (1.0 = normal by default.)
+[*][b]Infinite stamina[/b] (optional): attacks with sword, spear and bow cost no stamina.
+[*][b]Zombie health per second[/b]: during fights, your zombies regain up to 10% of their maximum health every second. A zombie that has fallen stays down. (0 = off by default.)
 [/list]
 Regeneration runs in real time and only while you are actually playing: not in the main menu, not while paused and not while sleeping. All settings apply instantly, no restart needed. The mod stores no data of its own in your save game, so you can add or remove it at any time.
 
@@ -52,7 +59,7 @@ Regeneration runs in real time and only while you are actually playing: not in t
 [*]Extract the archive and copy the [b]BepInEx[/b] folder into your Graveyard Keeper 2 game folder.
 [*]The mod is now located at BepInEx/plugins/TirelessKeeper/TirelessKeeper.dll
 [/list]
-To check that it works, look for "Tireless Keeper 1.2.0 loaded" in BepInEx/LogOutput.log.
+To check that it works, look for "Tireless Keeper 1.3.0 loaded" in BepInEx/LogOutput.log.
 
 [size=4][b]Translations[/b][/size]
 With the GK2 Mod Framework (0.1.8 or newer), the settings and the mod description appear in your game language. English and German are included. To add your language, copy [i]BepInEx/plugins/GK2.Framework/Localization/playerregeneration/en.json[/i] to a file named after your language code (e.g. [i]ko.json[/i]) in the same folder and translate the texts on the right side. Section headings in the Mods menu stay in English. Restart the game to see changes. Send me your file and I will gladly include it in the next version!
@@ -68,7 +75,10 @@ Delete the folders BepInEx/plugins/TirelessKeeper and BepInEx/plugins/GK2.Framew
 [/list]
 
 [size=4][b]Compatibility[/b][/size]
-Works with or without the GK2 Mod Framework. Other mods that also change player health, energy, insanity or sleep may conflict.
+Works with or without the GK2 Mod Framework. Other mods that also change player health, energy, insanity, sleep, stamina or zombie health in fights may conflict.
+
+[size=4][b]Source code[/b][/size]
+The source code of this mod is on [url=https://github.com/BloodyLink2/GraveyardKeeper2-Mods]GitHub[/url] under the MIT license, together with my other mods. You can check what it does, learn from it or build it yourself.
 
 [size=4][b]Other Mods[/b][/size]
 [list]

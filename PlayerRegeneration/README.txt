@@ -1,4 +1,4 @@
-TIRELESS KEEPER 1.2.0 for Graveyard Keeper 2 (BepInEx mod)
+TIRELESS KEEPER 1.3.0 for Graveyard Keeper 2 (BepInEx mod)
 ==========================================================
 
 What the mod does
@@ -24,6 +24,13 @@ What the mod does
   when you work at a table yourself, such as workbenches, the autopsy and embalming table or the
   study table. Every hit still costs energy as usual, so a craft costs less energy in total.
   Recipes above your mastery stay locked.
+- Stamina regeneration speed (1.0 to 10.0, default 1.0): how fast your stamina refills in
+  fights. The short pause after an attack before it starts to refill gets shorter by the same
+  factor.
+- Infinite stamina (toggle, default off): attacks with sword, spear and bow cost no stamina, the
+  bar stays full.
+- Zombie health per second (0 to 10 %, default 0 = off): during fights, your zombies regain this
+  share of their maximum health every second. A zombie that has fallen stays down.
 - Regeneration runs in real time and only while you are playing: not in the main menu, not
   while paused and not while sleeping (the game refills your energy by itself there).
 - All changes take effect immediately, no restart needed. Nothing is stored in your save game.
@@ -51,7 +58,7 @@ Settings
 Check
 -----
 BepInEx/LogOutput.log should contain:
-  "Tireless Keeper 1.2.0 loaded (framework: yes/no, ...)"
+  "Tireless Keeper 1.3.0 loaded (framework: yes/no, ...)"
 
 Translations
 ------------

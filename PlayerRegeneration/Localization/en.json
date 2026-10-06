@@ -1,5 +1,5 @@
 {
-  "mod.description": "Health and energy regenerate (or stay full), insanity fades and sleep deprivation builds up slower.",
+  "mod.description": "Health and energy regenerate (or stay full), insanity fades, sleep deprivation builds up slower, and more stamina and zombie health in fights.",
   "Enabled.name": "Mod enabled",
   "Enabled.description": "Turns the mod on or off (takes effect immediately).",
   "HealthPerSecond.name": "Health per second",
@@ -25,5 +25,14 @@
   "SleepWithFullEnergy.hint": "The bed no longer refuses when your energy is full. Important for saving.",
   "WorkSpeed.name": "Your work speed at tables",
   "WorkSpeed.description": "How much progress each of your hits makes when you work at a table yourself, such as workbenches, the autopsy and embalming table or the study table (1.0 = normal, up to 10x). Every hit still costs energy as usual, so a craft costs less energy in total. Recipes above your mastery stay locked.",
-  "WorkSpeed.hint": "More progress per hit when you work at a table yourself (1.0 = normal)."
+  "WorkSpeed.hint": "More progress per hit when you work at a table yourself (1.0 = normal).",
+  "StaminaRegenerationSpeed.name": "Stamina regeneration speed",
+  "StaminaRegenerationSpeed.description": "How fast your stamina refills in fights (1.0 = normal, up to 10x). The short pause after an attack before it starts to refill gets shorter by the same factor.",
+  "StaminaRegenerationSpeed.hint": "How fast your stamina refills in fights (1.0 = normal).",
+  "InfiniteStamina.name": "Infinite stamina",
+  "InfiniteStamina.description": "Attacks with sword, spear and bow no longer cost stamina, the bar stays full.",
+  "InfiniteStamina.hint": "Attacks cost no stamina, the bar stays full.",
+  "ZombieHealthPercent.name": "Zombie health per second (%)",
+  "ZombieHealthPercent.description": "During fights, your zombies regain this share of their maximum health every second (0 = off, up to 10%). A zombie that has fallen stays down.",
+  "ZombieHealthPercent.hint": "Share of their maximum health your zombies regain per second in fights (0 = off)."
 }
